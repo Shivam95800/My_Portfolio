@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCommandPalette();
   initProjectsFilterAndSearch();
   initShivamAIAssistant();
+  initAIGuidedTour();
 });
 
 /* ==========================================================================
@@ -1226,6 +1227,128 @@ function initShivamAIAssistant() {
           appendBotMessage(reply);
         }, 350);
       }
+    }
+  });
+}
+
+
+/* ==========================================================================
+   19. Cinematic AI Guided Walkthrough Tour
+   ========================================================================= */
+function initAIGuidedTour() {
+  const startBtn = document.getElementById('btn-start-tour');
+  const overlay = document.getElementById('tour-overlay');
+  const closeBtn = document.getElementById('tour-close-btn');
+  const prevBtn = document.getElementById('tour-prev-btn');
+  const nextBtn = document.getElementById('tour-next-btn');
+  const stepBadge = document.getElementById('tour-step-badge');
+  const titleEl = document.getElementById('tour-title');
+  const descEl = document.getElementById('tour-desc');
+  const dots = document.querySelectorAll('.tour-dot');
+
+  if (!startBtn || !overlay) return;
+
+  const steps = [
+    {
+      target: '#hero-terminal',
+      title: 'Interactive Python Terminal',
+      desc: 'Explore the live terminal emulator. You can run python functions like ds.predict() or ds.skills() to inspect candidate models and data pipelines.',
+      action: () => {
+        document.querySelector('[data-exec="predict"]')?.click();
+      }
+    },
+    {
+      target: '#projects',
+      title: '12 Deployed Projects Showcase',
+      desc: 'Filter 12 real-world systems across AI, Computer Vision, Full-Stack Web, and Java DSA with live deployment links and GitHub code.',
+      action: () => {
+        document.querySelector('[data-filter="ai"]')?.click();
+      }
+    },
+    {
+      target: '#awards',
+      title: 'Official Verified Certifications',
+      desc: 'View official verified credentials including OCI 2025 AI Foundations Associate and NPTEL (IIT Madras) Machine Learning with direct PDF access.',
+      action: () => {}
+    },
+    {
+      target: '#ai-chat-bubble',
+      title: 'Ask Shivam AI Assistant',
+      desc: 'Have questions? Shivam AI is ready 24/7 to answer questions about projects, graduation (2027), skills, and resume downloads.',
+      action: () => {
+        const bubble = document.getElementById('ai-chat-bubble');
+        if (bubble && !document.getElementById('ai-chat-modal')?.classList.contains('open')) {
+          bubble.click();
+        }
+      }
+    }
+  ];
+
+  let currentStep = 0;
+  let activeHighlight = null;
+
+  function updateStep(idx) {
+    if (activeHighlight) {
+      activeHighlight.classList.remove('tour-target-highlight');
+    }
+
+    currentStep = idx;
+    const step = steps[currentStep];
+
+    stepBadge.textContent = `STEP ${currentStep + 1} / ${steps.length}`;
+    titleEl.textContent = step.title;
+    descEl.textContent = step.desc;
+
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentStep));
+
+    prevBtn.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
+    nextBtn.textContent = currentStep === steps.length - 1 ? 'Finish 🏁' : 'Next ▶';
+
+    const targetEl = document.querySelector(step.target);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      targetEl.classList.add('tour-target-highlight');
+      activeHighlight = targetEl;
+    }
+
+    if (step.action) step.action();
+    if (typeof playSfxOpen === 'function') playSfxOpen();
+  }
+
+  function startTour() {
+    overlay.classList.remove('is-hidden');
+    updateStep(0);
+  }
+
+  function endTour() {
+    overlay.classList.add('is-hidden');
+    if (activeHighlight) {
+      activeHighlight.classList.remove('tour-target-highlight');
+      activeHighlight = null;
+    }
+    const modal = document.getElementById('ai-chat-modal');
+    if (modal && modal.classList.contains('open')) {
+      document.getElementById('ai-chat-close-btn')?.click();
+    }
+    document.querySelector('[data-filter="all"]')?.click();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof playSfxSuccess === 'function') playSfxSuccess();
+  }
+
+  startBtn.addEventListener('click', startTour);
+  closeBtn.addEventListener('click', endTour);
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
+      updateStep(currentStep + 1);
+    } else {
+      endTour();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) {
+      updateStep(currentStep - 1);
     }
   });
 }

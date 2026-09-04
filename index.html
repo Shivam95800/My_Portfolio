@@ -201,6 +201,9 @@
             <a href="assets/resume.pdf" class="btn-primary" id="btn-download-resume" download="Shivam_Soni_Resume.pdf">
               <span>↓</span> Download Resume
             </a>
+                        <button class="btn-secondary interactive" id="btn-start-tour" style="border-color: var(--accent); color: var(--accent); gap: 6px;">
+              <span>▶</span> AI Guided Tour
+            </button>
             <a href="#projects" class="btn-secondary" id="btn-view-projects">
               View Projects <span>→</span>
             </a>
@@ -1181,6 +1184,30 @@
         <input type="text" class="ai-chat-input" id="ai-chat-input" placeholder="Ask a question..." autocomplete="off">
         <button type="submit" class="ai-chat-send-btn" id="ai-chat-send-btn" aria-label="Send Message">➤</button>
       </form>
+    </div>
+  </div>
+
+    <!-- =========================================================================
+       Cinematic AI Guided Walkthrough Overlay
+       ========================================================================= -->
+  <div class="tour-overlay is-hidden" id="tour-overlay">
+    <div class="tour-card" id="tour-card">
+      <div class="tour-header">
+        <div class="tour-step-badge" id="tour-step-badge">STEP 1 / 4</div>
+        <button class="tour-close-btn" id="tour-close-btn" title="Exit Tour">✕ Exit Tour</button>
+      </div>
+      <h3 class="tour-title" id="tour-title">Interactive Python Terminal</h3>
+      <p class="tour-desc" id="tour-desc">Experience the live interactive terminal supporting commands like predict(), skills(), and stats().</p>
+      <div class="tour-footer">
+        <button class="tour-nav-btn" id="tour-prev-btn">◀ Previous</button>
+        <div class="tour-dots" id="tour-dots">
+          <span class="tour-dot active"></span>
+          <span class="tour-dot"></span>
+          <span class="tour-dot"></span>
+          <span class="tour-dot"></span>
+        </div>
+        <button class="tour-nav-btn tour-next-btn" id="tour-next-btn">Next ▶</button>
+      </div>
     </div>
   </div>
 
