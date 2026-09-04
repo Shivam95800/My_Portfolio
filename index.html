@@ -1,446 +1,464 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="teal">
 <head>
-  <meta char🧠et="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-🧠cale=1.0">
-  <meta name="de🧠cription" content="Portfoli✕ of Shivam Soni — Data Science & Software Engineering Student 🧠pecializing in Python, Machine Learning, SQL, and Full-Stack Web Development.">
-  <meta name="keyword🧠" content="Shivam Soni, Data Science, Machine Learning, Python, Portfolio, Galgotia🧠 College, Full-Stack Developer">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Shivam Soni — Data Science & Software Engineering Student specializing in Python, Machine Learning, SQL, and Full-Stack Web Development.">
+  <meta name="keywords" content="Shivam Soni, Data Science, Machine Learning, Python, Portfolio, Galgotias College, Full-Stack Developer">
   <meta name="author" content="Shivam Soni">
   <title>Shivam Soni | Data Science & Software Engineer</title>
   
-  <!-▶ Font🧠 -->
-  <link rel="preconnect" href="http🧠://font🧠.googleapi🧠.com">
-  <link rel="preconnect" href="http🧠://font🧠.g🧠tatic.com" cro🧠🧠origin>
-  <link href="http🧠://font🧠.googleapi🧠.com/c🧠🧠2⚡family=Inter:wght@300;400;500;600;700;800&family=JetBrain🧠+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grote🧠k:wght@500;600;700;800&di🧠play=🧠wap" rel="🧠tyle🧠heet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-▶ Style🧠heet -->
-  <link rel="🧠tyle🧠heet" href="c🧠🧠/🧠tyle.c🧠🧠">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
   
-  <!-▶ Favicon / Tab Icon -->
-  <link rel="icon" href="data:image/🧠vg+xml,<🧠vg xmln🧠=%22http://www.w3.org/2000/🧠vg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-🧠ize=%2290%22>⚡</text></🧠vg>">
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
 
-  <!-▶ Top Scroll Progre🧠🧠 Bar -->
-  <div id="🧠croll-progre🧠🧠-bar"></div>
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress-bar"></div>
 
-  <!-▶ Cu🧠tom Cur🧠or -->
-  <div cla🧠🧠="cu🧠tom-cur🧠or-dot" id="cur🧠or-dot"></div>
-  <div cla🧠🧠="cu🧠tom-cur🧠or-glow" id="cur🧠or-glow"></div>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+  <div class="custom-cursor-glow" id="cursor-glow"></div>
 
-  <!-▶ Toa🧠t •lert -->
-  <div cla🧠🧠="toa🧠t-alert" id="toa🧠t-m🧠g">
-    <🧠pan>✔</🧠pan> <🧠pan id="toa🧠t-text">Copied t✕ clipboard!</🧠pan>
+  <!-- Toast Alert -->
+  <div class="toast-alert" id="toast-msg">
+    <span>✔</span> <span id="toast-text">Copied to clipboard!</span>
   </div>
 
-  <!-▶ Floating Back t✕ Top Button -->
-  <button id="back-to-top-btn" aria-label="Scroll back t✕ top" title="Back t✕ top">
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top-btn" aria-label="Scroll back to top" title="Back to top">
     ↑
   </button>
 
-  <!-▶ =========================================================================
+  <!-- =========================================================================
        Navigation Bar
        ========================================================================= -->
-  <nav cla🧠🧠="navbar" id="navbar">
-    <div cla🧠🧠="container">
-      <a href="#" cla🧠🧠="brand-log✓ id="brand-log✓>
-        Shivam Soni<🧠pan cla🧠🧠="brand-accent-dot">.</🧠pan>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="brand-logo" id="brand-logo">
+        Shivam Soni<span class="brand-accent-dot">.</span>
       </a>
 
-      <ul cla🧠🧠="nav-menu" id="nav-menu">
-        <li><a href="#about" cla🧠🧠="nav-link">•bout</a></li>
-        <li><a href="#🧠kill🧠" cla🧠🧠="nav-link">Skill🧠</a></li>
-        <li><a href="#education" cla🧠🧠="nav-link">Education</a></li>
-        <li><a href="#experience" cla🧠🧠="nav-link">Experience</a></li>
-        <li><a href="#project🧠" cla🧠🧠="nav-link">Project🧠</a></li>
-        <li><a href="#award🧠" cla🧠🧠="nav-link">•ward🧠</a></li>
-        <li><a href="#contact" cla🧠🧠="nav-link">Contact</a></li>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#awards" class="nav-link">Awards</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
 
-      <div cla🧠🧠="nav-action🧠">
-        <!-▶ Theme Switcher -->
-        <div cla🧠🧠="theme-🧠witcher" title="Select •ccent Theme">
-          <button cla🧠🧠="theme-dot-btn theme-dot-teal active" data-🧠et-theme="teal" aria-label="Teal Theme"></button>
-          <button cla🧠🧠="theme-dot-btn theme-dot-amber" data-🧠et-theme="amber" aria-label="•mber Theme"></button>
-          <button cla🧠🧠="theme-dot-btn theme-dot-purple" data-🧠et-theme="purple" aria-label="Purple Theme"></button>
+      <div class="nav-actions">
+        <!-- Theme Switcher -->
+                <!-- Audio SFX Toggle -->
+        <button class="nav-util-btn sound-toggle-btn" id="sound-toggle-btn" aria-label="Toggle Sound Effects" title="Sound Effects: ON/OFF">
+          <svg id="sound-icon-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          <svg id="sound-icon-off" class="is-hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+          <span class="sound-text">SFX</span>
+        </button>
+
+        <!-- Command Palette Trigger -->
+        <button class="nav-util-btn cmd-trigger-btn" id="cmd-palette-trigger" aria-label="Open Command Palette (Ctrl+K)" title="Quick Search (Ctrl+K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span class="cmd-badge">Ctrl K</span>
+        </button>
+
+        <div class="theme-switcher" title="Select Accent Theme">
+          <button class="theme-dot-btn theme-dot-teal active" data-set-theme="teal" aria-label="Teal Theme"></button>
+          <button class="theme-dot-btn theme-dot-amber" data-set-theme="amber" aria-label="Amber Theme"></button>
+          <button class="theme-dot-btn theme-dot-purple" data-set-theme="purple" aria-label="Purple Theme"></button>
         </div>
 
-        <a href="#contact" cla🧠🧠="btn-pill" id="nav-cta">Get in touch</a>
-        <button cla🧠🧠="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu">
+        <a href="#contact" class="btn-pill" id="nav-cta">Get in touch</a>
+        <button class="hamburger-btn" id="hamburger-toggle" aria-label="Toggle navigation menu">
           ☰
         </button>
       </div>
     </div>
   </nav>
 
-  <!-▶ =========================================================================
-       Her✕ Section
+  <!-- =========================================================================
+       Hero Section
        ========================================================================= -->
-  <🧠ection cla🧠🧠="hero-🧠ection" id="her✓>
-    <canva🧠 id="hero-canva🧠"></canva🧠>
+  <section class="hero-section" id="hero">
+    <canvas id="hero-canvas"></canvas>
     
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="hero-grid">
+    <div class="container">
+      <div class="hero-grid">
         
-        <!-▶ Left: Interactive Python Terminal Window -->
-        <div cla🧠🧠="terminal-window reveal tilt-card 🧠potlight-card" id="hero-terminal">
-          <div cla🧠🧠="terminal-header">
-            <div cla🧠🧠="terminal-dot🧠">
-              <🧠pan cla🧠🧠="terminal-dot dot-red"></🧠pan>
-              <🧠pan cla🧠🧠="terminal-dot dot-yellow"></🧠pan>
-              <🧠pan cla🧠🧠="terminal-dot dot-green"></🧠pan>
+        <!-- Left: Interactive Python Terminal Window -->
+        <div class="terminal-window reveal tilt-card spotlight-card" id="hero-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
             </div>
 
-            <!-▶ Terminal Tab🧠 -->
-            <div cla🧠🧠="terminal-tab🧠">
-              <button cla🧠🧠="terminal-tab-btn active" data-tab="intr✓>
-                <🧠pan>🐍</🧠pan> intro.py
+            <!-- Terminal Tabs -->
+            <div class="terminal-tabs">
+              <button class="terminal-tab-btn active" data-tab="intro">
+                <span>🐍</span> intro.py
               </button>
-              <button cla🧠🧠="terminal-tab-btn" data-tab="model🧠">
-                <🧠pan>⚡</🧠pan> model🧠.py
+              <button class="terminal-tab-btn" data-tab="models">
+                <span>⚡</span> models.py
               </button>
-              <button cla🧠🧠="terminal-tab-btn" data-tab="query">
-                <🧠pan>📊</🧠pan> query.🧠ql
+              <button class="terminal-tab-btn" data-tab="query">
+                <span>📊</span> query.sql
               </button>
             </div>
           </div>
 
-          <!-▶ Quick Interactive Command Bar -->
-          <div cla🧠🧠="terminal-quick-action🧠">
-            <🧠pan cla🧠🧠="terminal-action-label">Quick Run:</🧠pan>
-            <button cla🧠🧠="terminal-cmd-btn" data-exec="predict">▶ d🧠.predict()</button>
-            <button cla🧠🧠="terminal-cmd-btn" data-exec="🧠kill🧠">▶ d🧠.🧠kill🧠()</button>
-            <button cla🧠🧠="terminal-cmd-btn" data-exec="🧠tat🧠">▶ d🧠.🧠tat🧠()</button>
-            <button cla🧠🧠="terminal-cmd-btn" data-exec="clear" 🧠tyle="color: var(--text-dim);">✕ clear</button>
+          <!-- Quick Interactive Command Bar -->
+          <div class="terminal-quick-actions">
+            <span class="terminal-action-label">Quick Run:</span>
+            <button class="terminal-cmd-btn" data-exec="predict">▶ ds.predict()</button>
+            <button class="terminal-cmd-btn" data-exec="skills">▶ ds.skills()</button>
+            <button class="terminal-cmd-btn" data-exec="stats">▶ ds.stats()</button>
+            <button class="terminal-cmd-btn" data-exec="clear" style="color: var(--text-dim);">✕ clear</button>
           </div>
 
-          <div cla🧠🧠="terminal-body" id="terminal-🧠creen-body">
+          <div class="terminal-body" id="terminal-screen-body">
             
-            <!-▶ Pane 1: intro.py (Typewriter) -->
-            <div cla🧠🧠="terminal-pane active" id="pane-intr✓>
-              <div cla🧠🧠="code-line">
-                <🧠pan cla🧠🧠="code-prompt">&gt;&gt;&gt;</🧠pan>
-                <🧠pan cla🧠🧠="code-keyword">import</🧠pan> 🧠hivam <🧠pan cla🧠🧠="code-keyword">a🧠</🧠pan> <🧠pan cla🧠🧠="code-var">d🧠</🧠pan>
+            <!-- Pane 1: intro.py (Typewriter) -->
+            <div class="terminal-pane active" id="pane-intro">
+              <div class="code-line">
+                <span class="code-prompt">&gt;&gt;&gt;</span>
+                <span class="code-keyword">import</span> shivam <span class="code-keyword">as</span> <span class="code-var">ds</span>
               </div>
-              <div cla🧠🧠="code-typewriter-line">
-                <🧠pan cla🧠🧠="code-prompt">&gt;&gt;&gt;</🧠pan>
-                <🧠pan cla🧠🧠="code-var">d🧠</🧠pan>.<🧠pan cla🧠🧠="typewriter-text" id="typewriter-output"></🧠pan><🧠pan cla🧠🧠="cur🧠or"></🧠pan>
+              <div class="code-typewriter-line">
+                <span class="code-prompt">&gt;&gt;&gt;</span>
+                <span class="code-var">ds</span>.<span class="typewriter-text" id="typewriter-output"></span><span class="cursor"></span>
               </div>
 
-              <!-▶ Fade-in Re🧠ult Box -->
-              <div cla🧠🧠="terminal-re🧠ult-box" id="terminal-re🧠ult">
-                <div cla🧠🧠="re🧠ult-row">
-                  <🧠pan cla🧠🧠="re🧠ult-key">role</🧠pan>
-                  <🧠pan cla🧠🧠="re🧠ult-arrow">→</🧠pan>
-                  <🧠pan cla🧠🧠="re🧠ult-val">Data Science 🧠tudent</🧠pan>
+              <!-- Fade-in Result Box -->
+              <div class="terminal-result-box" id="terminal-result">
+                <div class="result-row">
+                  <span class="result-key">role</span>
+                  <span class="result-arrow">→</span>
+                  <span class="result-val">Data Science student</span>
                 </div>
-                <div cla🧠🧠="re🧠ult-row">
-                  <🧠pan cla🧠🧠="re🧠ult-key">🧠tack</🧠pan>
-                  <🧠pan cla🧠🧠="re🧠ult-arrow">→</🧠pan>
-                  <🧠pan cla🧠🧠="re🧠ult-val">Python · SQL · ML · Fla🧠k</🧠pan>
+                <div class="result-row">
+                  <span class="result-key">stack</span>
+                  <span class="result-arrow">→</span>
+                  <span class="result-val">Python · SQL · ML · Flask</span>
                 </div>
-                <div cla🧠🧠="re🧠ult-row">
-                  <🧠pan cla🧠🧠="re🧠ult-key">🧠tatu🧠</🧠pan>
-                  <🧠pan cla🧠🧠="re🧠ult-arrow">→</🧠pan>
-                  <🧠pan cla🧠🧠="re🧠ult-val highlight">Open t✕ intern🧠hip🧠, 2027 grad</🧠pan>
+                <div class="result-row">
+                  <span class="result-key">status</span>
+                  <span class="result-arrow">→</span>
+                  <span class="result-val highlight">Open to internships, 2027 grad</span>
                 </div>
               </div>
             </div>
 
-            <!-▶ Pane 2: model🧠.py -->
-            <div cla🧠🧠="terminal-pane" id="pane-model🧠">
-              <div cla🧠🧠="code-line"><🧠pan cla🧠🧠="code-comment"># Neural / Vi🧠ion Pipeline</🧠pan></div>
-              <div cla🧠🧠="code-line"><🧠pan cla🧠🧠="code-keyword">cla🧠🧠</🧠pan> <🧠pan cla🧠🧠="code-fn">•I•ttendance</🧠pan>:</div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;<🧠pan cla🧠🧠="code-keyword">def</🧠pan> <🧠pan cla🧠🧠="code-fn">__init__</🧠pan>(🧠elf, model=<🧠pan cla🧠🧠="code-🧠tr">"Facenet512"</🧠pan>):</div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;&nb🧠p;&nb🧠p;🧠elf.detector = <🧠pan cla🧠🧠="code-fn">cv2.Ca🧠cadeCla🧠🧠ifier</🧠pan>()</div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;&nb🧠p;&nb🧠p;🧠elf.voice_verifier = <🧠pan cla🧠🧠="code-fn">SpeechEngine</🧠pan>()</div>
-              <div cla🧠🧠="code-line"><br></div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;<🧠pan cla🧠🧠="code-keyword">def</🧠pan> <🧠pan cla🧠🧠="code-fn">verify_and_log</🧠pan>(🧠elf, frame):</div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;&nb🧠p;&nb🧠p;match = 🧠elf.<🧠pan cla🧠🧠="code-fn">match_embedding🧠</🧠pan>(frame)</div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;&nb🧠p;&nb🧠p;<🧠pan cla🧠🧠="code-keyword">return</🧠pan> {<🧠pan cla🧠🧠="code-🧠tr">"🧠tatu🧠"</🧠pan>: <🧠pan cla🧠🧠="code-🧠tr">"Verified"</🧠pan>, <🧠pan cla🧠🧠="code-🧠tr">"acc"</🧠pan>: <🧠pan cla🧠🧠="code-🧠tr">"99.2%"</🧠pan>}</div>
+            <!-- Pane 2: models.py -->
+            <div class="terminal-pane" id="pane-models">
+              <div class="code-line"><span class="code-comment"># Neural / Vision Pipeline</span></div>
+              <div class="code-line"><span class="code-keyword">class</span> <span class="code-fn">AIAttendance</span>:</div>
+              <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-fn">__init__</span>(self, model=<span class="code-str">"Facenet512"</span>):</div>
+              <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;self.detector = <span class="code-fn">cv2.CascadeClassifier</span>()</div>
+              <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;self.voice_verifier = <span class="code-fn">SpeechEngine</span>()</div>
+              <div class="code-line"><br></div>
+              <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-fn">verify_and_log</span>(self, frame):</div>
+              <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;match = self.<span class="code-fn">match_embeddings</span>(frame)</div>
+              <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> {<span class="code-str">"status"</span>: <span class="code-str">"Verified"</span>, <span class="code-str">"acc"</span>: <span class="code-str">"99.2%"</span>}</div>
             </div>
 
-            <!-▶ Pane 3: query.🧠ql -->
-            <div cla🧠🧠="terminal-pane" id="pane-query">
-              <div cla🧠🧠="code-line"><🧠pan cla🧠🧠="code-comment">-▶ Candidate Evaluation Pipeline</🧠pan></div>
-              <div cla🧠🧠="code-line"><🧠pan cla🧠🧠="code-keyword">SELECT</🧠pan> name, cgpa, leetcode_🧠olved</div>
-              <div cla🧠🧠="code-line"><🧠pan cla🧠🧠="code-keyword">FROM</🧠pan> data_🧠cience_candidate🧠</div>
-              <div cla🧠🧠="code-line"><🧠pan cla🧠🧠="code-keyword">WHERE</🧠pan> graduation = <🧠pan cla🧠🧠="code-🧠tr">'2027'</🧠pan></div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;<🧠pan cla🧠🧠="code-keyword">•ND</🧠pan> leetcode_🧠olved &gt;= <🧠pan cla🧠🧠="code-var">110</🧠pan></div>
-              <div cla🧠🧠="code-line">&nb🧠p;&nb🧠p;<🧠pan cla🧠🧠="code-keyword">•ND</🧠pan> 🧠kill🧠 <🧠pan cla🧠🧠="code-keyword">LIKE</🧠pan> <🧠pan cla🧠🧠="code-🧠tr">'%ML%'</🧠pan>;</div>
-              <div cla🧠🧠="code-line"><br></div>
-              <div cla🧠🧠="code-line"><🧠pan cla🧠🧠="code-comment">-▶ Output: [Shivam Soni | 7.41 | 110+]</🧠pan></div>
+            <!-- Pane 3: query.sql -->
+            <div class="terminal-pane" id="pane-query">
+              <div class="code-line"><span class="code-comment">-- Candidate Evaluation Pipeline</span></div>
+              <div class="code-line"><span class="code-keyword">SELECT</span> name, cgpa, leetcode_solved</div>
+              <div class="code-line"><span class="code-keyword">FROM</span> data_science_candidates</div>
+              <div class="code-line"><span class="code-keyword">WHERE</span> graduation = <span class="code-str">'2027'</span></div>
+              <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">AND</span> leetcode_solved &gt;= <span class="code-var">110</span></div>
+              <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">AND</span> skills <span class="code-keyword">LIKE</span> <span class="code-str">'%ML%'</span>;</div>
+              <div class="code-line"><br></div>
+              <div class="code-line"><span class="code-comment">-- Output: [Shivam Soni | 7.41 | 110+]</span></div>
             </div>
 
           </div>
         </div>
 
-        <!-▶ Center: Her✕ Narrative & Call t✕ •ction🧠 -->
-        <div cla🧠🧠="hero-content reveal">
-          <div cla🧠🧠="hero-🧠tatu🧠-pill">
-            <🧠pan cla🧠🧠="🧠tatu🧠-dot-pul🧠e"></🧠pan> •vailable for Opportunitie🧠
+        <!-- Center: Hero Narrative & Call to Actions -->
+        <div class="hero-content reveal">
+          <div class="hero-status-pill">
+            <span class="status-dot-pulse"></span> Available for Opportunities
           </div>
-          <h1 cla🧠🧠="hero-name">Shivam Soni</h1>
-          <p cla🧠🧠="hero-role-de🧠c">
-            <🧠trong>B.Tech CSE (Data Science)</🧠trong> final-year 🧠tudent at <🧠trong>Galgotia🧠 College of Engineering and Technology</🧠trong> — building with Python, SQL, Machine Learning and Data •nalytic🧠, with an eye on full-🧠tack development along the way.
+          <h1 class="hero-name">Shivam Soni</h1>
+          <p class="hero-role-desc">
+            <strong>B.Tech CSE (Data Science)</strong> final-year student at <strong>Galgotias College of Engineering and Technology</strong> — building with Python, SQL, Machine Learning and Data Analytics, with an eye on full-stack development along the way.
           </p>
-          <div cla🧠🧠="hero-action🧠">
-            <a href="a🧠🧠et🧠/re🧠ume.pdf" cla🧠🧠="btn-primary" id="btn-download-re🧠ume" download="Shivam_Soni_Re🧠ume.pdf">
-              <🧠pan>↓</🧠pan> Download Re🧠ume
+          <div class="hero-actions">
+            <a href="assets/resume.pdf" class="btn-primary" id="btn-download-resume" download="Shivam_Soni_Resume.pdf">
+              <span>↓</span> Download Resume
             </a>
-            <a href="#project🧠" cla🧠🧠="btn-🧠econdary" id="btn-view-project🧠">
-              View Project🧠 <🧠pan>→</🧠pan>
+            <a href="#projects" class="btn-secondary" id="btn-view-projects">
+              View Projects <span>→</span>
             </a>
           </div>
         </div>
 
-        <!-▶ Right: Profile Phot✕ Card -->
-        <div cla🧠🧠="profile-card reveal tilt-card 🧠potlight-card" id="hero-profile-card">
-          <div cla🧠🧠="profile-img-wrap">
-            <div cla🧠🧠="badge-location">
-              <🧠pan cla🧠🧠="badge-dot"></🧠pan> India / Greater Noida
+        <!-- Right: Profile Photo Card -->
+        <div class="profile-card reveal tilt-card spotlight-card" id="hero-profile-card">
+          <div class="profile-img-wrap">
+            <div class="badge-location">
+              <span class="badge-dot"></span> India / Greater Noida
             </div>
-            <img 🧠rc="a🧠🧠et🧠/profile.jpg" alt="Shivam Soni" cla🧠🧠="profile-img" id="profile-img" onerror="thi🧠.🧠rc='data:image/🧠vg+xml;utf8,<🧠vg xmln🧠=\'http://www.w3.org/2000/🧠vg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%23121a2c\'/><text x=\'50%25\' y=\'50%25\' dominant-ba🧠eline=\'middle\' text-anchor=\'middle\' fill=\'%234fd1c5\' font-🧠ize=\'48\' font-family=\'🧠an🧠-🧠erif\'>SS</text></🧠vg>'">
+            <img src="assets/profile.jpg" alt="Shivam Soni" class="profile-img" id="profile-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%23121a2c\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%234fd1c5\' font-size=\'48\' font-family=\'sans-serif\'>SS</text></svg>'">
           </div>
-          <div cla🧠🧠="profile-🧠tat🧠-grid">
-            <div cla🧠🧠="🧠tat-item">
-              <🧠pan cla🧠🧠="🧠tat-val" data-counter="110" data-🧠uffix="📥>110+</🧠pan>
-              <🧠pan cla🧠🧠="🧠tat-lbl">LeetCode</🧠pan>
+          <div class="profile-stats-grid">
+            <div class="stat-item">
+              <span class="stat-val" data-counter="110" data-suffix="+">110+</span>
+              <span class="stat-lbl">LeetCode</span>
             </div>
-            <div cla🧠🧠="🧠tat-item">
-              <🧠pan cla🧠🧠="🧠tat-val" data-counter="7.41" data-decimal🧠="2">7.41</🧠pan>
-              <🧠pan cla🧠🧠="🧠tat-lbl">CGP•</🧠pan>
+            <div class="stat-item">
+              <span class="stat-val" data-counter="7.41" data-decimals="2">7.41</span>
+              <span class="stat-lbl">CGPA</span>
             </div>
-            <div cla🧠🧠="🧠tat-item">
-              <🧠pan cla🧠🧠="🧠tat-val" data-counter="2027">2027</🧠pan>
-              <🧠pan cla🧠🧠="🧠tat-lbl">Graduation</🧠pan>
+            <div class="stat-item">
+              <span class="stat-val" data-counter="2027">2027</span>
+              <span class="stat-lbl">Graduation</span>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-  </🧠ection>
+  </section>
 
-  <!-▶ =========================================================================
-       •bout Section
+  <!-- =========================================================================
+       About Section
        ========================================================================= -->
-  <🧠ection cla🧠🧠="🧠ection" id="about">
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="about-grid">
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
         
-        <!-▶ Left: •bout Narrative -->
-        <div cla🧠🧠="about-text reveal">
-          <div cla🧠🧠="🧠ection-eyebrow">about</div>
-          <h2 cla🧠🧠="🧠ection-heading">• little context</h2>
+        <!-- Left: About Narrative -->
+        <div class="about-text reveal">
+          <div class="section-eyebrow">about</div>
+          <h2 class="section-heading">A little context</h2>
           <p>
-            I am a final-year <🧠trong>B.Tech CSE (Data Science)</🧠trong> 🧠tudent at <🧠trong>Galgotia🧠 College of Engineering and Technology</🧠trong>. My primary work center🧠 on tran🧠forming raw data int✕ actionable in🧠ight🧠 through <🧠trong>Python, SQL, Machine Learning, and Exploratory Data •naly🧠i🧠</🧠trong>.
+            I am a final-year <strong>B.Tech CSE (Data Science)</strong> student at <strong>Galgotias College of Engineering and Technology</strong>. My primary work centers on transforming raw data into actionable insights through <strong>Python, SQL, Machine Learning, and Exploratory Data Analysis</strong>.
           </p>
           <p>
-            •🧠 an a🧠piring full-🧠tack developer and •I/ML enthu🧠ia🧠t, I thrive on tackling algorithmic challenge🧠 with <🧠trong>110+ LeetCode problem🧠 🧠olved</🧠trong> and hold an <🧠trong>NPTEL (IIT Madra🧠) Machine Learning certification</🧠trong>. I build intelligent web application🧠 that bridge data pipeline🧠 with clean, u🧠er-centric interface🧠.
+            As an aspiring full-stack developer and AI/ML enthusiast, I thrive on tackling algorithmic challenges with <strong>110+ LeetCode problems solved</strong> and hold an <strong>NPTEL (IIT Madras) Machine Learning certification</strong>. I build intelligent web applications that bridge data pipelines with clean, user-centric interfaces.
           </p>
           
-          <div cla🧠🧠="chip-group">
-            <🧠pan cla🧠🧠="chip">•nalytical Thinking</🧠pan>
-            <🧠pan cla🧠🧠="chip">Problem Solving</🧠pan>
-            <🧠pan cla🧠🧠="chip">•ttention t✕ Detail</🧠pan>
-            <🧠pan cla🧠🧠="chip">C · Java · Python</🧠pan>
-            <🧠pan cla🧠🧠="chip">Data Structure🧠 & •lgorithm🧠</🧠pan>
+          <div class="chip-group">
+            <span class="chip">Analytical Thinking</span>
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Attention to Detail</span>
+            <span class="chip">C · Java · Python</span>
+            <span class="chip">Data Structures & Algorithms</span>
           </div>
         </div>
 
-        <!-▶ Right: Inf✕ Card -->
-        <div cla🧠🧠="info-card reveal tilt-card 🧠potlight-card">
-          <div cla🧠🧠="info-card-header">
-            <🧠pan>// candidate_metadata</🧠pan>
-            <🧠pan 🧠tyle="font-🧠ize: 0.75rem; color: var(--text-dim);">JSON-SPEC</🧠pan>
+        <!-- Right: Info Card -->
+        <div class="info-card reveal tilt-card spotlight-card">
+          <div class="info-card-header">
+            <span>// candidate_metadata</span>
+            <span style="font-size: 0.75rem; color: var(--text-dim);">JSON-SPEC</span>
           </div>
-          <ul cla🧠🧠="info-li🧠t">
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">Name:</🧠pan>
-              <🧠pan cla🧠🧠="info-value">Shivam Soni</🧠pan>
+          <ul class="info-list">
+            <li class="info-row">
+              <span class="info-label">Name:</span>
+              <span class="info-value">Shivam Soni</span>
             </li>
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">Focu🧠:</🧠pan>
-              <🧠pan cla🧠🧠="info-value">Data Science</🧠pan>
+            <li class="info-row">
+              <span class="info-label">Focus:</span>
+              <span class="info-value">Data Science</span>
             </li>
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">Degree:</🧠pan>
-              <🧠pan cla🧠🧠="info-value">B.Tech CSE (DS)</🧠pan>
+            <li class="info-row">
+              <span class="info-label">Degree:</span>
+              <span class="info-value">B.Tech CSE (DS)</span>
             </li>
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">In🧠titute:</🧠pan>
-              <🧠pan cla🧠🧠="info-value">Galgotia🧠 College of Eng. & Tech.</🧠pan>
+            <li class="info-row">
+              <span class="info-label">Institute:</span>
+              <span class="info-value">Galgotias College of Eng. & Tech.</span>
             </li>
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">Grad. Year:</🧠pan>
-              <🧠pan cla🧠🧠="info-value">2027</🧠pan>
+            <li class="info-row">
+              <span class="info-label">Grad. Year:</span>
+              <span class="info-value">2027</span>
             </li>
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">Location:</🧠pan>
-              <🧠pan cla🧠🧠="info-value">Greater Noida, India</🧠pan>
+            <li class="info-row">
+              <span class="info-label">Location:</span>
+              <span class="info-value">Greater Noida, India</span>
             </li>
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">Email:</🧠pan>
-              <🧠pan cla🧠🧠="info-value"><a href="mailto:🧠hivam301102@gmail.com">🧠hivam301102@gmail.com</a></🧠pan>
+            <li class="info-row">
+              <span class="info-label">Email:</span>
+              <span class="info-value"><a href="mailto:shivam301102@gmail.com">shivam301102@gmail.com</a></span>
             </li>
-            <li cla🧠🧠="info-row">
-              <🧠pan cla🧠🧠="info-label">Phone:</🧠pan>
-              <🧠pan cla🧠🧠="info-value"><a href="tel:+919580015881">+91 95800 15881</a></🧠pan>
+            <li class="info-row">
+              <span class="info-label">Phone:</span>
+              <span class="info-value"><a href="tel:+919580015881">+91 95800 15881</a></span>
             </li>
           </ul>
         </div>
 
       </div>
     </div>
-  </🧠ection>
+  </section>
 
-  <!-▶ =========================================================================
-       Skill🧠 Section
+  <!-- =========================================================================
+       Skills Section
        ========================================================================= -->
-  <🧠ection cla🧠🧠="🧠ection" id="🧠kill🧠">
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="reveal">
-        <div cla🧠🧠="🧠ection-eyebrow">🧠kill🧠</div>
-        <h2 cla🧠🧠="🧠ection-heading">Technical •r🧠enal</h2>
-        <p cla🧠🧠="🧠ection-🧠ubtitle">Categorized competencie🧠 🧠panning data 🧠cience, machine learning model🧠, and modern web architecture🧠.</p>
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">skills</div>
+        <h2 class="section-heading">Technical Arsenal</h2>
+        <p class="section-subtitle">Categorized competencies spanning data science, machine learning models, and modern web architectures.</p>
       </div>
 
-      <!-▶ Category Filter Tab🧠 -->
-      <div cla🧠🧠="🧠kill🧠-filter-bar reveal">
-        <button cla🧠🧠="filter-pill-btn active" data-filter="all">•ll Skill🧠 (17)</button>
-        <button cla🧠🧠="filter-pill-btn" data-filter="model">Machine Learning & •I</button>
-        <button cla🧠🧠="filter-pill-btn" data-filter="language🧠">Language🧠 & SQL</button>
-        <button cla🧠🧠="filter-pill-btn" data-filter="web">Full-Stack Web</button>
-        <button cla🧠🧠="filter-pill-btn" data-filter="analytic🧠">Data •nalytic🧠</button>
+      <!-- Category Filter Tabs -->
+      <div class="skills-filter-bar reveal">
+        <button class="filter-pill-btn active" data-filter="all">All Skills (17)</button>
+        <button class="filter-pill-btn" data-filter="model">Machine Learning & AI</button>
+        <button class="filter-pill-btn" data-filter="languages">Languages & SQL</button>
+        <button class="filter-pill-btn" data-filter="web">Full-Stack Web</button>
+        <button class="filter-pill-btn" data-filter="analytics">Data Analytics</button>
       </div>
 
-      <div cla🧠🧠="🧠kill🧠-grid">
+      <div class="skills-grid">
         
-        <!-▶ Card 1: Language🧠 -->
-        <div cla🧠🧠="🧠kill-card reveal tilt-card 🧠potlight-card" data-category="language🧠">
-          <div cla🧠🧠="dtype-annotation">dtype: language🧠</div>
-          <h3 cla🧠🧠="🧠kill-title">Programming & Querying</h3>
-          <div cla🧠🧠="🧠kill-tag🧠">
-            <🧠pan cla🧠🧠="🧠kill-pill">Java</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">SQL</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">Python</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">C</🧠pan>
+        <!-- Card 1: Languages -->
+        <div class="skill-card reveal tilt-card spotlight-card" data-category="languages">
+          <div class="dtype-annotation">dtype: languages</div>
+          <h3 class="skill-title">Programming & Querying</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">C</span>
           </div>
         </div>
 
-        <!-▶ Card 2: ML & •I -->
-        <div cla🧠🧠="🧠kill-card reveal tilt-card 🧠potlight-card" data-category="model">
-          <div cla🧠🧠="dtype-annotation">dtype: model</div>
-          <h3 cla🧠🧠="🧠kill-title">Machine Learning & •I</h3>
-          <div cla🧠🧠="🧠kill-tag🧠">
-            <🧠pan cla🧠🧠="🧠kill-pill">Machine Learning</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">•rtificial Intelligence</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">Model Building</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">Groq / LLM •PI🧠</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">Computer Vi🧠ion</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">Face Recognition</🧠pan>
+        <!-- Card 2: ML & AI -->
+        <div class="skill-card reveal tilt-card spotlight-card" data-category="model">
+          <div class="dtype-annotation">dtype: model</div>
+          <h3 class="skill-title">Machine Learning & AI</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">Machine Learning</span>
+            <span class="skill-pill">Artificial Intelligence</span>
+            <span class="skill-pill">Model Building</span>
+            <span class="skill-pill">Groq / LLM APIs</span>
+            <span class="skill-pill">Computer Vision</span>
+            <span class="skill-pill">Face Recognition</span>
           </div>
         </div>
 
-        <!-▶ Card 3: Full-Stack -->
-        <div cla🧠🧠="🧠kill-card reveal tilt-card 🧠potlight-card" data-category="web">
-          <div cla🧠🧠="dtype-annotation">dtype: web</div>
-          <h3 cla🧠🧠="🧠kill-title">Full-Stack Development</h3>
-          <div cla🧠🧠="🧠kill-tag🧠">
-            <🧠pan cla🧠🧠="🧠kill-pill">HTML</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">CSS</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">JavaScript</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">Fla🧠k</🧠pan>
+        <!-- Card 3: Full-Stack -->
+        <div class="skill-card reveal tilt-card spotlight-card" data-category="web">
+          <div class="dtype-annotation">dtype: web</div>
+          <h3 class="skill-title">Full-Stack Development</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Flask</span>
           </div>
         </div>
 
-        <!-▶ Card 4: •nalytic🧠 -->
-        <div cla🧠🧠="🧠kill-card reveal tilt-card 🧠potlight-card" data-category="analytic🧠">
-          <div cla🧠🧠="dtype-annotation">dtype: analytic🧠</div>
-          <h3 cla🧠🧠="🧠kill-title">Data •naly🧠i🧠 & Stati🧠tic🧠</h3>
-          <div cla🧠🧠="🧠kill-tag🧠">
-            <🧠pan cla🧠🧠="🧠kill-pill">Data Cleaning</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">ED•</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">De🧠criptive Stati🧠tic🧠</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">Data •nalytic🧠</🧠pan>
-            <🧠pan cla🧠🧠="🧠kill-pill">In🧠ight Generation</🧠pan>
+        <!-- Card 4: Analytics -->
+        <div class="skill-card reveal tilt-card spotlight-card" data-category="analytics">
+          <div class="dtype-annotation">dtype: analytics</div>
+          <h3 class="skill-title">Data Analysis & Statistics</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">Data Cleaning</span>
+            <span class="skill-pill">EDA</span>
+            <span class="skill-pill">Descriptive Statistics</span>
+            <span class="skill-pill">Data Analytics</span>
+            <span class="skill-pill">Insight Generation</span>
           </div>
         </div>
 
       </div>
     </div>
-  </🧠ection>
+  </section>
 
-  <!-▶ =========================================================================
-       Education & Experience Timeline🧠
+  <!-- =========================================================================
+       Education & Experience Timelines
        ========================================================================= -->
-  <🧠ection cla🧠🧠="🧠ection" id="education">
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="timeline-🧠ection-grid">
+  <section class="section" id="education">
+    <div class="container">
+      <div class="timeline-section-grid">
         
-        <!-▶ Column 1: Education -->
-        <div cla🧠🧠="timeline-col reveal">
-          <div cla🧠🧠="🧠ection-eyebrow">education</div>
-          <h2 cla🧠🧠="timeline-column-title">•cademic Journey</h2>
+        <!-- Column 1: Education -->
+        <div class="timeline-col reveal">
+          <div class="section-eyebrow">education</div>
+          <h2 class="timeline-column-title">Academic Journey</h2>
           
-          <div cla🧠🧠="timeline-wrapper">
+          <div class="timeline-wrapper">
             
-            <!-▶ Item 1: B.Tech -->
-            <div cla🧠🧠="timeline-item">
-              <div cla🧠🧠="timeline-node">1</div>
-              <div cla🧠🧠="timeline-content-card 🧠potlight-card">
-                <🧠pan cla🧠🧠="timeline-date-badge">2023 – 2027 · Pur🧠uing</🧠pan>
-                <h3 cla🧠🧠="timeline-title">B.Tech in Computer Science (Data Science)</h3>
-                <div cla🧠🧠="timeline-🧠ubtitle">Galgotia🧠 College of Engineering and Technology</div>
-                <div cla🧠🧠="timeline-meta">CGP•: 7.41 / 10</div>
+            <!-- Item 1: B.Tech -->
+            <div class="timeline-item">
+              <div class="timeline-node">1</div>
+              <div class="timeline-content-card spotlight-card">
+                <span class="timeline-date-badge">2023 – 2027 · Pursuing</span>
+                <h3 class="timeline-title">B.Tech in Computer Science (Data Science)</h3>
+                <div class="timeline-subtitle">Galgotias College of Engineering and Technology</div>
+                <div class="timeline-meta">CGPA: 7.41 / 10</div>
               </div>
             </div>
 
-            <!-▶ Item 2: 12th Grade -->
-            <div cla🧠🧠="timeline-item">
-              <div cla🧠🧠="timeline-node">2</div>
-              <div cla🧠🧠="timeline-content-card 🧠potlight-card">
-                <🧠pan cla🧠🧠="timeline-date-badge">2021 · Completed</🧠pan>
-                <h3 cla🧠🧠="timeline-title">12th Grade (Senior Secondary)</h3>
-                <div cla🧠🧠="timeline-🧠ubtitle">RLS Convent Senior Secondary School</div>
-                <div cla🧠🧠="timeline-meta">Score: 90.1%</div>
+            <!-- Item 2: 12th Grade -->
+            <div class="timeline-item">
+              <div class="timeline-node">2</div>
+              <div class="timeline-content-card spotlight-card">
+                <span class="timeline-date-badge">2021 · Completed</span>
+                <h3 class="timeline-title">12th Grade (Senior Secondary)</h3>
+                <div class="timeline-subtitle">RLS Convent Senior Secondary School</div>
+                <div class="timeline-meta">Score: 90.1%</div>
               </div>
             </div>
 
-            <!-▶ Item 3: 10th Grade -->
-            <div cla🧠🧠="timeline-item">
-              <div cla🧠🧠="timeline-node">3</div>
-              <div cla🧠🧠="timeline-content-card 🧠potlight-card">
-                <🧠pan cla🧠🧠="timeline-date-badge">2019 · Completed</🧠pan>
-                <h3 cla🧠🧠="timeline-title">10th Grade (Secondary)</h3>
-                <div cla🧠🧠="timeline-🧠ubtitle">RLS Convent Senior Secondary School</div>
-                <div cla🧠🧠="timeline-meta">Score: 80.1%</div>
+            <!-- Item 3: 10th Grade -->
+            <div class="timeline-item">
+              <div class="timeline-node">3</div>
+              <div class="timeline-content-card spotlight-card">
+                <span class="timeline-date-badge">2019 · Completed</span>
+                <h3 class="timeline-title">10th Grade (Secondary)</h3>
+                <div class="timeline-subtitle">RLS Convent Senior Secondary School</div>
+                <div class="timeline-meta">Score: 80.1%</div>
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-▶ Column 2: Experience -->
-        <div cla🧠🧠="timeline-col reveal" id="experience">
-          <div cla🧠🧠="🧠ection-eyebrow">experience</div>
-          <h2 cla🧠🧠="timeline-column-title">Work Experience</h2>
+        <!-- Column 2: Experience -->
+        <div class="timeline-col reveal" id="experience">
+          <div class="section-eyebrow">experience</div>
+          <h2 class="timeline-column-title">Work Experience</h2>
 
-          <div cla🧠🧠="timeline-wrapper">
+          <div class="timeline-wrapper">
             
-            <!-▶ Item 1: CodSoft -->
-            <div cla🧠🧠="timeline-item">
-              <div cla🧠🧠="timeline-node">1</div>
-              <div cla🧠🧠="timeline-content-card 🧠potlight-card">
-                <🧠pan cla🧠🧠="timeline-date-badge">Sept 2025 · 4 Week🧠</🧠pan>
-                <h3 cla🧠🧠="timeline-title">Web Development Intern</h3>
-                <div cla🧠🧠="timeline-🧠ubtitle">CodSoft (Virtual Intern🧠hip)</div>
-                <ul cla🧠🧠="timeline-bullet🧠">
-                  <li>Completed a 4-week virtual intern🧠hip, building 3 re🧠pon🧠ive web project🧠 u🧠ing HTML, CSS, and JavaScript.</li>
-                  <li>De🧠igned and deployed all 3 project🧠 live on Vercel, en🧠uring clean UI, proper layout🧠, and cro🧠🧠-device compatibility.</li>
-                  <li>Delivered every a🧠🧠igned ta🧠k on time, maintaining con🧠i🧠tent code quality acro🧠🧠 all 3 project🧠.</li>
+            <!-- Item 1: CodSoft -->
+            <div class="timeline-item">
+              <div class="timeline-node">1</div>
+              <div class="timeline-content-card spotlight-card">
+                <span class="timeline-date-badge">Sept 2025 · 4 Weeks</span>
+                <h3 class="timeline-title">Web Development Intern</h3>
+                <div class="timeline-subtitle">CodSoft (Virtual Internship)</div>
+                <ul class="timeline-bullets">
+                  <li>Completed a 4-week virtual internship, building 3 responsive web projects using HTML, CSS, and JavaScript.</li>
+                  <li>Designed and deployed all 3 projects live on Vercel, ensuring clean UI, proper layouts, and cross-device compatibility.</li>
+                  <li>Delivered every assigned task on time, maintaining consistent code quality across all 3 projects.</li>
                 </ul>
+                <div style="margin-top: 14px;">
+                  <a href="assets/certificates/codsoft-internship-offer-letter.pdf" target="_blank" rel="noopener noreferrer" class="badge-btn interactive" style="font-size: 0.78rem;">
+                    <span>📄 View Offer Letter (PDF)</span> ↗
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -449,277 +467,532 @@
 
       </div>
     </div>
-  </🧠ection>
+  </section>
 
-  <!-▶ =========================================================================
-       Project🧠 Section
+  <!-- =========================================================================
+       Projects Section
        ========================================================================= -->
-  <🧠ection cla🧠🧠="🧠ection" id="project🧠">
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="reveal">
-        <div cla🧠🧠="🧠ection-eyebrow">project🧠</div>
-        <h2 cla🧠🧠="🧠ection-heading">Featured Work🧠</h2>
-        <p cla🧠🧠="🧠ection-🧠ubtitle">Real-world 🧠y🧠tem🧠 combining •I, face recognition pipeline🧠, and 🧠calable web architecture🧠.</p>
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">projects</div>
+        <h2 class="section-heading">Featured Works</h2>
+        <p class="section-subtitle">Real-world systems combining AI, face recognition pipelines, NLP, and scalable web architectures.</p>
       </div>
 
-      <div cla🧠🧠="project🧠-grid">
+      <!-- Interactive Projects Toolbar (Filter Tabs + Real-Time Search) -->
+      <div class="projects-toolbar reveal">
+        <div class="project-filters">
+          <button class="project-filter-btn active" data-filter="all">All Projects (6)</button>
+          <button class="project-filter-btn" data-filter="ai">🤖 AI & Computer Vision</button>
+          <button class="project-filter-btn" data-filter="web">🌐 Full-Stack & Web</button>
+          <button class="project-filter-btn" data-filter="nlp">📝 NLP & Chatbots</button>
+        </div>
+
+        <div class="project-search-box">
+          <span class="project-search-icon">🔍</span>
+          <input type="text" id="project-search-input" placeholder="Search tech or title (e.g. Python, React)..." autocomplete="off">
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
         
-        <!-▶ Project 1: •I •ttendance Sy🧠tem -->
-        <div cla🧠🧠="project-card reveal tilt-card 🧠potlight-card">
-          <div cla🧠🧠="project-card-top-accent"></div>
+        <!-- Project 1: AI Attendance System -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="ai" data-tags="python opencv streamlit flask computer-vision ai attendance">
+          <div class="project-card-top-accent"></div>
           <div>
-            <div cla🧠🧠="project-header">
-              <🧠pan cla🧠🧠="project-year">2026</🧠pan>
-              <🧠pan cla🧠🧠="project-category">•I / Computer Vi🧠ion</🧠pan>
+            <div class="project-header">
+              <span class="project-year">2026</span>
+              <span class="project-category">AI / Computer Vision</span>
             </div>
-            <h3 cla🧠🧠="project-title">•I •ttendance Sy🧠tem</h3>
-            <p cla🧠🧠="project-de🧠c">
-              •n intelligent attendance management 🧠y🧠tem combining real-time face recognition with voice-ba🧠ed verification. Fla🧠k backend log🧠 attendance automatically, cutting manual entry time by ☰90%, with validation built in t✕ guard again🧠t 🧠poofing.
+            <h3 class="project-title">SnapClass AI Attendance</h3>
+            <p class="project-desc">
+              An intelligent attendance management system combining real-time face recognition with voice-based verification. Streamlit & Flask backend logs attendance automatically, cutting manual entry time by ~90% with anti-spoofing validation.
             </p>
           </div>
           <div>
-            <div cla🧠🧠="project-tag🧠">
-              <🧠pan cla🧠🧠="project-tag">Python</🧠pan>
-              <🧠pan cla🧠🧠="project-tag">OpenCV</🧠pan>
-              <🧠pan cla🧠🧠="project-tag">Face Recognition</🧠pan>
-              <🧠pan cla🧠🧠="project-tag">Speech Recognition</🧠pan>
-              <🧠pan cla🧠🧠="project-tag">Fla🧠k</🧠pan>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">OpenCV</span>
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">Flask</span>
             </div>
-            <div cla🧠🧠="project-action🧠">
-              <a href="http🧠://github.com/Shivam95800/SnapCla🧠🧠-•ttendance" target="_blank" rel="noopener noreferrer" cla🧠🧠="badge-btn interactive">
-                <🧠pan>GitHub</🧠pan> ↗
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/SnapClass-Attendance" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
               </a>
-              <a href="http🧠://🧠napcla🧠🧠-attendance-gcet.🧠treamlit.app/" target="_blank" rel="noopener noreferrer" cla🧠🧠="badge-btn interactive">
-                <🧠pan>Live Demo</🧠pan> ↗
+              <a href="https://snapclass-attendance-gcet.streamlit.app/" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
               </a>
             </div>
           </div>
         </div>
 
-        <!-▶ Project 2: Homely Hub -->
-        <div cla🧠🧠="project-card reveal tilt-card 🧠potlight-card">
-          <div cla🧠🧠="project-card-top-accent"></div>
+        <!-- Project 2: Homely Hub -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="mongodb express react nodejs full-stack web booking vercel">
+          <div class="project-card-top-accent"></div>
           <div>
-            <div cla🧠🧠="project-header">
-              <🧠pan cla🧠🧠="project-year">2026</🧠pan>
-              <🧠pan cla🧠🧠="project-category">Full-Stack Web •pp</🧠pan>
+            <div class="project-header">
+              <span class="project-year">2026</span>
+              <span class="project-category">Full-Stack Web App</span>
             </div>
-            <h3 cla🧠🧠="project-title">Homely Hub</h3>
-            <p cla🧠🧠="project-de🧠c">
-              • full-🧠tack hotel and re🧠ort booking platform where cu🧠tomer🧠 🧠earch, brow🧠e, and book room🧠. RESTful •PI🧠 handle interaction🧠 between cu🧠tomer🧠 and hotel owner🧠, backed by a re🧠pon🧠ive React frontend and MongoDB for per🧠i🧠tent data.
+            <h3 class="project-title">Homely Hub</h3>
+            <p class="project-desc">
+              A full-stack hotel and resort booking platform where customers browse, search, and book rooms with interactive UI, RESTful APIs, and MongoDB cloud storage.
             </p>
           </div>
           <div>
-            <div cla🧠🧠="project-tag🧠">
-              <🧠pan cla🧠🧠="project-tag">MongoDB</🧠pan>
-              <🧠pan cla🧠🧠="project-tag">Expre🧠🧠.j🧠</🧠pan>
-              <🧠pan cla🧠🧠="project-tag">React</🧠pan>
-              <🧠pan cla🧠🧠="project-tag">Node.j🧠</🧠pan>
+            <div class="project-tags">
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">Express.js</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
             </div>
-            <div cla🧠🧠="project-action🧠">
-              <a href="http🧠://github.com/Shivam95800/HomelyHub" target="_blank" rel="noopener noreferrer" cla🧠🧠="badge-btn interactive">
-                <🧠pan>GitHub</🧠pan> ↗
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/HomelyHub" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
               </a>
-              <a href="http🧠://homely-hub-omega.vercel.app/" target="_blank" rel="noopener noreferrer" cla🧠🧠="badge-btn interactive">
-                <🧠pan>Live Demo</🧠pan> ↗
+              <a href="https://homely-hub-omega.vercel.app/" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
               </a>
             </div>
           </div>
+        </div>
+
+        <!-- Project 3: TEXT_SUMMARIZATION -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="nlp ai" data-tags="python nlp nltk text-summarization machine-learning render">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2026</span>
+              <span class="project-category">NLP & Machine Learning</span>
+            </div>
+            <h3 class="project-title">AI Text Summarization</h3>
+            <p class="project-desc">
+              Natural Language Processing application that distills extensive articles and documents into concise, highly informative summaries with configurable length and keypoint extraction.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">Machine Learning</span>
+              <span class="project-tag">Render</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/TEXT_SUMMARIZATION" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://text-summarization-app-i2dm.onrender.com/" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: AI Personal Assistant -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="ai web" data-tags="python speech-recognition ai-assistant automation render">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2026</span>
+              <span class="project-category">AI & Automation</span>
+            </div>
+            <h3 class="project-title">AI Personal Assistant</h3>
+            <p class="project-desc">
+              Intelligent virtual assistant with speech recognition, text commands, task automation, and instant web lookup capabilities.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Speech Engine</span>
+              <span class="project-tag">Automation</span>
+              <span class="project-tag">Render</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/AI-Personal-Assistant" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://ai-personal-assistant-2-tl0h.onrender.com/" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Online Quiz Platform -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="javascript html css quiz interactive vercel">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2025</span>
+              <span class="project-category">Interactive Web App</span>
+            </div>
+            <h3 class="project-title">Online Quiz Platform</h3>
+            <p class="project-desc">
+              Interactive examination and quiz assessment system with live score calculation, timed questions, categorized topics, and instant performance feedback.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/online-quiz-platform" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://online-quiz-platform-two.vercel.app" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Rural Health Chatbot -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="nlp ai" data-tags="python nlp healthcare chatbot vercel">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2025</span>
+              <span class="project-category">Healthcare AI</span>
+            </div>
+            <h3 class="project-title">Rural Health Awareness Chatbot</h3>
+            <p class="project-desc">
+              Healthcare awareness chatbot engineered for underserved rural communities, providing preliminary symptom guidance, hygiene awareness, and medical advisory information.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">Healthcare AI</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/chatbot_1" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://chatbot-1-liart.vercel.app" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty Search State -->
+        <div class="projects-empty-state is-hidden" id="projects-empty-state">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
+          <h4>No matching projects found</h4>
+          <p>Try searching for different keywords like "Python", "React", or "NLP".</p>
         </div>
 
       </div>
     </div>
-  </🧠ection>
+  </section>
 
-  <!-▶ =========================================================================
-       •ward🧠 & Certification🧠 Section
+  <!-- =========================================================================
+       Awards & Certifications Section
        ========================================================================= -->
-  <🧠ection cla🧠🧠="🧠ection" id="award🧠">
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="reveal">
-        <div cla🧠🧠="🧠ection-eyebrow">award🧠</div>
-        <h2 cla🧠🧠="🧠ection-heading">Certification🧠 & Honor🧠</h2>
-        <p cla🧠🧠="🧠ection-🧠ubtitle">Verified mile🧠tone🧠 and credential🧠 in machine learning, cloud, and engineering fundamental🧠.</p>
+  <section class="section" id="awards">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">awards & certifications</div>
+        <h2 class="section-heading">Certifications & Credentials</h2>
+        <p class="section-subtitle">Verified milestones and credentials in AI, cloud architectures, programming fundamentals, and industry training.</p>
       </div>
 
-      <div cla🧠🧠="award🧠-grid">
+      <div class="awards-grid">
         
-        <!-▶ •ward 1 -->
-        <div cla🧠🧠="award-card reveal tilt-card 🧠potlight-card">
-          <🧠pan cla🧠🧠="award-year-pill">2025</🧠pan>
-          <h3 cla🧠🧠="award-title">Introduction t✕ Machine Learning</h3>
-          <div cla🧠🧠="award-i🧠🧠uer">NPTEL (IIT Madra🧠)</div>
-          <p cla🧠🧠="award-de🧠c">12-week certified cour🧠e covering 🧠upervi🧠ed & un🧠upervi🧠ed learning algorithm🧠 with a proctored final exam.</p>
+        <!-- Certificate 1: Oracle Cloud AI -->
+        <div class="award-card reveal tilt-card spotlight-card">
+          <div class="award-card-header">
+            <span class="award-year-pill">2025 – 2027</span>
+            <span class="award-badge-verified">✓ Verified</span>
+          </div>
+          <h3 class="award-title">OCI 2025 Certified AI Foundations Associate</h3>
+          <div class="award-issuer">Oracle University</div>
+          <p class="award-desc">Comprehensive Oracle Cloud credential focusing on Artificial Intelligence concepts, Large Language Models (LLMs), deep learning fundamentals, and OCI AI infrastructure. <strong>Cert ID: 102368580OCI25AICFA</strong></p>
+          <div class="award-actions">
+            <a href="assets/certificates/oracle-cloud-ai-foundations.pdf" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+              <span>📄 View Certificate (PDF)</span> ↗
+            </a>
+          </div>
         </div>
 
-        <!-▶ •ward 2 -->
-        <div cla🧠🧠="award-card reveal tilt-card 🧠potlight-card">
-          <🧠pan cla🧠🧠="award-year-pill">2025</🧠pan>
-          <h3 cla🧠🧠="award-title">OCI – Generative •I Profe🧠🧠ional</h3>
-          <div cla🧠🧠="award-i🧠🧠uer">Oracle Univer🧠ity</div>
-          <p cla🧠🧠="award-de🧠c">Profe🧠🧠ional credential focu🧠ing on LLM fine-tuning, embedding🧠, and generative architecture🧠.</p>
+        <!-- Certificate 2: Infosys Java Fundamentals -->
+        <div class="award-card reveal tilt-card spotlight-card">
+          <div class="award-card-header">
+            <span class="award-year-pill">May 2025</span>
+            <span class="award-badge-verified">✓ Verified</span>
+          </div>
+          <h3 class="award-title">Java Programming Fundamentals</h3>
+          <div class="award-issuer">Infosys Springboard</div>
+          <p class="award-desc">Rigorous training in Object-Oriented Programming (OOP) in Java, classes, inheritance, polymorphism, exception handling, data collections, and algorithmic problem solving.</p>
+          <div class="award-actions">
+            <a href="assets/certificates/infosys-java-programming-fundamentals.pdf" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+              <span>📄 View Certificate (PDF)</span> ↗
+            </a>
+            <a href="https://verify.onwingspan.com" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+              <span>Verify</span> ↗
+            </a>
+          </div>
         </div>
 
-        <!-▶ •ward 3 -->
-        <div cla🧠🧠="award-card reveal tilt-card 🧠potlight-card">
-          <🧠pan cla🧠🧠="award-year-pill">2025</🧠pan>
-          <h3 cla🧠🧠="award-title">•WS E🧠🧠ential🧠</h3>
-          <div cla🧠🧠="award-i🧠🧠uer">Udemy</div>
-          <p cla🧠🧠="award-de🧠c">Foundation🧠 of •WS core cloud 🧠ervice🧠, EC2, S3, I•M, and cloud architectural be🧠t practice🧠.</p>
+        <!-- Certificate 3: Infosys HTML Advanced -->
+        <div class="award-card reveal tilt-card spotlight-card">
+          <div class="award-card-header">
+            <span class="award-year-pill">2024 – 2025</span>
+            <span class="award-badge-verified">✓ Verified</span>
+          </div>
+          <h3 class="award-title">HTML - Advanced</h3>
+          <div class="award-issuer">Infosys Springboard</div>
+          <p class="award-desc">Advanced semantic markup, responsive design fundamentals, modern HTML5 multimedia APIs, web accessibility (a11y), and frontend structure standards.</p>
+          <div class="award-actions">
+            <a href="assets/certificates/infosys-html-advanced.pdf" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+              <span>📄 View Certificate (PDF)</span> ↗
+            </a>
+            <a href="https://verify.onwingspan.com" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+              <span>Verify</span> ↗
+            </a>
+          </div>
         </div>
 
-        <!-▶ •ward 4 -->
-        <div cla🧠🧠="award-card reveal tilt-card 🧠potlight-card">
-          <🧠pan cla🧠🧠="award-year-pill">2025</🧠pan>
-          <h3 cla🧠🧠="award-title">JavaScript for Beginner🧠</h3>
-          <div cla🧠🧠="award-i🧠🧠uer">Udemy</div>
-          <p cla🧠🧠="award-de🧠c">Comprehen🧠ive modern ES6+ JavaScript concept🧠, DOM manipulation, a🧠ynchronou🧠 programming, and event🧠.</p>
+        <!-- Certificate 4: CodSoft Internship Offer & Selection -->
+        <div class="award-card reveal tilt-card spotlight-card">
+          <div class="award-card-header">
+            <span class="award-year-pill">Sept 2025</span>
+            <span class="award-badge-verified">✓ Industry Offer</span>
+          </div>
+          <h3 class="award-title">Web Development Virtual Internship</h3>
+          <div class="award-issuer">CodSoft (Ref ID: BY25RY219784)</div>
+          <p class="award-desc">Official selection and offer as Web Development Intern at CodSoft. Built and deployed 3 complete web applications on Vercel with responsive layouts and clean code.</p>
+          <div class="award-actions">
+            <a href="assets/certificates/codsoft-internship-offer-letter.pdf" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+              <span>📄 View Offer Letter (PDF)</span> ↗
+            </a>
+          </div>
         </div>
 
-        <!-▶ •ward 5 (Full Width on 2-col) -->
-        <div cla🧠🧠="award-card reveal tilt-card 🧠potlight-card" 🧠tyle="grid-column: 1 / -1;">
-          <🧠pan cla🧠🧠="award-year-pill">2024 – 2025</🧠pan>
-          <h3 cla🧠🧠="award-title">Info🧠y🧠 Springboard Certification Suite</h3>
-          <div cla🧠🧠="award-i🧠🧠uer">Info🧠y🧠 Springboard</div>
-          <p cla🧠🧠="award-de🧠c">Completed multi-cour🧠e 🧠pecialization: Python Ba🧠ic🧠, DS• with Python (Part 1), Java Fundamental🧠, Spring 5 with Spring Boot, and HTML •dvanced.</p>
+        <!-- Certificate 5: NPTEL IIT Madras -->
+        <div class="award-card reveal tilt-card spotlight-card">
+          <div class="award-card-header">
+            <span class="award-year-pill">2025</span>
+            <span class="award-badge-verified">✓ Proctored</span>
+          </div>
+          <h3 class="award-title">Introduction to Machine Learning</h3>
+          <div class="award-issuer">NPTEL (IIT Madras)</div>
+          <p class="award-desc">12-week intensive course covering supervised & unsupervised machine learning, statistical modeling, classification, regression, and model evaluation with a proctored exam.</p>
         </div>
 
       </div>
     </div>
-  </🧠ection>
+  </section>
 
-  <!-▶ =========================================================================
+  <!-- =========================================================================
        Contact Section
        ========================================================================= -->
-  <🧠ection cla🧠🧠="🧠ection" id="contact">
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="reveal">
-        <div cla🧠🧠="🧠ection-eyebrow">contact</div>
-        <h2 cla🧠🧠="🧠ection-heading">Let'🧠 Connect</h2>
-        <p cla🧠🧠="🧠ection-🧠ubtitle">Open t✕ full-time role🧠, intern🧠hip opportunitie🧠, and collaborative data 🧠cience project🧠.</p>
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">contact</div>
+        <h2 class="section-heading">Let's Connect</h2>
+        <p class="section-subtitle">Open to full-time roles, internship opportunities, and collaborative data science projects.</p>
       </div>
 
-      <div cla🧠🧠="contact-grid">
+      <div class="contact-grid">
         
-        <!-▶ Left: Contact Card🧠 -->
-        <div cla🧠🧠="contact-card🧠-🧠tack reveal">
+        <!-- Left: Contact Cards -->
+        <div class="contact-cards-stack reveal">
           
-          <div cla🧠🧠="contact-item-card 🧠potlight-card">
-            <div cla🧠🧠="contact-item-card-left">
-              <div cla🧠🧠="contact-icon-box">✉</div>
-              <div cla🧠🧠="contact-inf✓>
-                <🧠pan cla🧠🧠="contact-label">Email</🧠pan>
-                <a href="mailto:🧠hivam301102@gmail.com" cla🧠🧠="contact-val" id="contact-email-val">🧠hivam301102@gmail.com</a>
+          <div class="contact-item-card spotlight-card">
+            <div class="contact-item-card-left">
+              <div class="contact-icon-box">✉</div>
+              <div class="contact-info">
+                <span class="contact-label">Email</span>
+                <a href="mailto:shivam301102@gmail.com" class="contact-val" id="contact-email-val">shivam301102@gmail.com</a>
               </div>
             </div>
-            <button cla🧠🧠="copy-btn" data-copy="🧠hivam301102@gmail.com" title="Copy Email">
+            <button class="copy-btn" data-copy="shivam301102@gmail.com" title="Copy Email">
               📋 Copy
             </button>
           </div>
 
-          <div cla🧠🧠="contact-item-card 🧠potlight-card">
-            <div cla🧠🧠="contact-item-card-left">
-              <div cla🧠🧠="contact-icon-box">☎</div>
-              <div cla🧠🧠="contact-inf✓>
-                <🧠pan cla🧠🧠="contact-label">Phone</🧠pan>
-                <a href="tel:+919580015881" cla🧠🧠="contact-val" id="contact-phone-val">+91 95800 15881</a>
+          <div class="contact-item-card spotlight-card">
+            <div class="contact-item-card-left">
+              <div class="contact-icon-box">☎</div>
+              <div class="contact-info">
+                <span class="contact-label">Phone</span>
+                <a href="tel:+919580015881" class="contact-val" id="contact-phone-val">+91 95800 15881</a>
               </div>
             </div>
-            <button cla🧠🧠="copy-btn" data-copy="+919580015881" title="Copy Phone">
+            <button class="copy-btn" data-copy="+919580015881" title="Copy Phone">
               📋 Copy
             </button>
           </div>
 
-          <div cla🧠🧠="contact-item-card 🧠potlight-card" id="contact-location">
-            <div cla🧠🧠="contact-item-card-left">
-              <div cla🧠🧠="contact-icon-box">📍</div>
-              <div cla🧠🧠="contact-inf✓>
-                <🧠pan cla🧠🧠="contact-label">Location</🧠pan>
-                <🧠pan cla🧠🧠="contact-val">Greater Noida, Uttar Prade🧠h, India</🧠pan>
+          <div class="contact-item-card spotlight-card" id="contact-location">
+            <div class="contact-item-card-left">
+              <div class="contact-icon-box">📍</div>
+              <div class="contact-info">
+                <span class="contact-label">Location</span>
+                <span class="contact-val">Greater Noida, Uttar Pradesh, India</span>
               </div>
             </div>
           </div>
 
-          <a href="http🧠://www.linkedin.com/in/🧠hivam🧠onitech" target="_blank" rel="noopener noreferrer" cla🧠🧠="contact-item-card 🧠potlight-card" id="contact-linkedin">
-            <div cla🧠🧠="contact-item-card-left">
-              <div cla🧠🧠="contact-icon-box">in</div>
-              <div cla🧠🧠="contact-inf✓>
-                <🧠pan cla🧠🧠="contact-label">LinkedIn</🧠pan>
-                <🧠pan cla🧠🧠="contact-val">🧠hivam🧠onitech ↗</🧠pan>
+          <a href="https://www.linkedin.com/in/shivamsonitech" target="_blank" rel="noopener noreferrer" class="contact-item-card spotlight-card" id="contact-linkedin">
+            <div class="contact-item-card-left">
+              <div class="contact-icon-box">in</div>
+              <div class="contact-info">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-val">shivamsonitech ↗</span>
               </div>
             </div>
           </a>
 
-          <a href="http🧠://github.com/Shivam95800" target="_blank" rel="noopener noreferrer" cla🧠🧠="contact-item-card 🧠potlight-card" id="contact-github">
-            <div cla🧠🧠="contact-item-card-left">
-              <div cla🧠🧠="contact-icon-box">⌘</div>
-              <div cla🧠🧠="contact-inf✓>
-                <🧠pan cla🧠🧠="contact-label">GitHub</🧠pan>
-                <🧠pan cla🧠🧠="contact-val">Shivam95800 ↗</🧠pan>
+          <a href="https://github.com/Shivam95800" target="_blank" rel="noopener noreferrer" class="contact-item-card spotlight-card" id="contact-github">
+            <div class="contact-item-card-left">
+              <div class="contact-icon-box">⌘</div>
+              <div class="contact-info">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-val">Shivam95800 ↗</span>
               </div>
             </div>
           </a>
 
-          <a href="http🧠://leetcode.com" target="_blank" rel="noopener noreferrer" cla🧠🧠="contact-item-card 🧠potlight-card" id="contact-leetcode">
-            <div cla🧠🧠="contact-item-card-left">
-              <div cla🧠🧠="contact-icon-box">⚡</div>
-              <div cla🧠🧠="contact-inf✓>
-                <🧠pan cla🧠🧠="contact-label">LeetCode</🧠pan>
-                <🧠pan cla🧠🧠="contact-val">110+ Problem🧠 Solved ↗</🧠pan>
+          <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" class="contact-item-card spotlight-card" id="contact-leetcode">
+            <div class="contact-item-card-left">
+              <div class="contact-icon-box">⚡</div>
+              <div class="contact-info">
+                <span class="contact-label">LeetCode</span>
+                <span class="contact-val">110+ Problems Solved ↗</span>
               </div>
             </div>
           </a>
 
         </div>
 
-        <!-▶ Right: Contact Form -->
-        <div cla🧠🧠="contact-form-panel reveal 🧠potlight-card">
-          <form id="portfolio-contact-form" action="mailto:🧠hivam301102@gmail.com" method="POST" enctype="text/plain">
-            <div cla🧠🧠="form-group">
-              <label for="form-name" cla🧠🧠="form-label">Your Name</label>
-              <input type="text" id="form-name" name="name" cla🧠🧠="form-control" placeholder="e.g. •lex Rivera" required>
+        <!-- Right: Contact Form -->
+        <div class="contact-form-panel reveal spotlight-card">
+          <form id="portfolio-contact-form" action="mailto:shivam301102@gmail.com" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <label for="form-name" class="form-label">Your Name</label>
+              <input type="text" id="form-name" name="name" class="form-control" placeholder="e.g. Alex Rivera" required>
             </div>
             
-            <div cla🧠🧠="form-group">
-              <label for="form-email" cla🧠🧠="form-label">Your Email</label>
-              <input type="email" id="form-email" name="email" cla🧠🧠="form-control" placeholder="e.g. alex@company.com" required>
+            <div class="form-group">
+              <label for="form-email" class="form-label">Your Email</label>
+              <input type="email" id="form-email" name="email" class="form-control" placeholder="e.g. alex@company.com" required>
             </div>
 
-            <div cla🧠🧠="form-group">
-              <label for="form-me🧠🧠age" cla🧠🧠="form-label">Your Me🧠🧠age</label>
-              <textarea id="form-me🧠🧠age" name="me🧠🧠age" cla🧠🧠="form-control" row🧠="5" placeholder="Let'🧠 di🧠cu🧠🧠 an intern🧠hip, data 🧠cience project, or full-time opportunity..." required></textarea>
+            <div class="form-group">
+              <label for="form-message" class="form-label">Your Message</label>
+              <textarea id="form-message" name="message" class="form-control" rows="5" placeholder="Let's discuss an internship, data science project, or full-time opportunity..." required></textarea>
             </div>
 
-            <button type="🧠ubmit" cla🧠🧠="btn-primary" 🧠tyle="width: 100%; ju🧠tify-content: center;">
-              Send Me🧠🧠age via Email ✉
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+              Send Message via Email ✉
             </button>
           </form>
         </div>
 
       </div>
     </div>
-  </🧠ection>
+  </section>
 
-  <!-▶ =========================================================================
+  <!-- =========================================================================
        Footer
        ========================================================================= -->
-  <footer cla🧠🧠="🧠ite-footer">
-    <div cla🧠🧠="container">
-      <div cla🧠🧠="footer-content">
-        <div cla🧠🧠="footer-copy">
-          © 2026 Shivam Soni. Built with clean code & data-driven preci🧠ion.
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-copy">
+          © 2026 Shivam Soni. Built with clean code & data-driven precision.
         </div>
-        <ul cla🧠🧠="footer-link🧠">
-          <li><a href="http🧠://www.linkedin.com/in/🧠hivam🧠onitech" target="_blank" rel="noopener noreferrer" cla🧠🧠="footer-link">LinkedIn</a></li>
-          <li><a href="http🧠://github.com/Shivam95800" target="_blank" rel="noopener noreferrer" cla🧠🧠="footer-link">GitHub</a></li>
-          <li><a href="http🧠://leetcode.com" target="_blank" rel="noopener noreferrer" cla🧠🧠="footer-link">LeetCode</a></li>
-          <li><a href="mailto:🧠hivam301102@gmail.com" cla🧠🧠="footer-link">Email</a></li>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/shivamsonitech" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a></li>
+          <li><a href="https://github.com/Shivam95800" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a></li>
+          <li><a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" class="footer-link">LeetCode</a></li>
+          <li><a href="mailto:shivam301102@gmail.com" class="footer-link">Email</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
-  <!-▶ JavaScript -->
-  <🧠cript 🧠rc="j🧠/main.j🧠"></🧠cript>
+    <!-- =========================================================================
+       Spotlight Command Palette (Ctrl + K)
+       ========================================================================= -->
+  <div class="cmd-palette-overlay" id="cmd-palette-overlay" aria-hidden="true">
+    <div class="cmd-palette-container" id="cmd-palette-container">
+      <div class="cmd-palette-input-wrap">
+        <span style="color: var(--accent); font-size: 1.1rem;">🔍</span>
+        <input type="text" class="cmd-palette-input" id="cmd-palette-input" placeholder="Type a command or search (e.g. 'projects', 'resume', 'skills', 'certificate')..." autocomplete="off">
+        <span class="cmd-palette-esc">ESC</span>
+      </div>
+      <div class="cmd-palette-results" id="cmd-palette-results">
+        <!-- Injected dynamically via JS -->
+      </div>
+      <div class="cmd-palette-footer">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> Navigate</span>
+        <span><kbd>↵</kbd> Select</span>
+        <span><kbd>ESC</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Ask Shivam AI Chatbot Assistant Widget
+       ========================================================================= -->
+  <div class="ai-widget-wrapper">
+    <!-- Floating Trigger Bubble -->
+    <button class="ai-chat-bubble" id="ai-chat-bubble" aria-label="Chat with Shivam AI Assistant" title="Ask anything about Shivam">
+      <span class="ai-status-pulse"></span>
+      <span class="ai-bubble-icon">🤖</span>
+      <span class="ai-bubble-text">Ask Shivam AI</span>
+    </button>
+
+    <!-- Chat Modal Window -->
+    <div class="ai-chat-modal" id="ai-chat-modal" aria-hidden="true">
+      <div class="ai-chat-header">
+        <div class="ai-chat-header-info">
+          <div class="ai-chat-avatar">🤖</div>
+          <div>
+            <div class="ai-chat-title">Shivam AI Assistant</div>
+            <div class="ai-chat-subtitle"><span class="ai-status-pulse" style="display:inline-block; width:6px; height:6px; margin-right:4px;"></span>Online • Ask me anything</div>
+          </div>
+        </div>
+        <button class="ai-chat-close-btn" id="ai-chat-close-btn" aria-label="Close Chat">✕</button>
+      </div>
+
+      <div class="ai-chat-body" id="ai-chat-body">
+        <div class="ai-msg bot">
+          <div class="ai-msg-bubble">
+            👋 Hi! I am Shivam's AI Assistant. Ask me anything about his technical projects, certifications (Oracle AI, Infosys Java), education at Galgotias College, skills, CGPA, or how to contact him!
+          </div>
+          <div class="ai-quick-pills">
+            <button class="ai-pill" data-prompt="Who is Shivam?">Who is Shivam?</button>
+            <button class="ai-pill" data-prompt="Show certificates">Certificates 🏆</button>
+            <button class="ai-pill" data-prompt="Show top projects">Top Projects 🚀</button>
+            <button class="ai-pill" data-prompt="What are his skills?">Tech Skills ⚡</button>
+            <button class="ai-pill" data-prompt="College & CGPA">College & CGPA 🎓</button>
+            <button class="ai-pill" data-prompt="Download resume">Resume 📄</button>
+            <button class="ai-pill" data-prompt="How to contact him?">Contact Info 📬</button>
+          </div>
+        </div>
+      </div>
+
+      <form class="ai-chat-footer" id="ai-chat-form">
+        <input type="text" class="ai-chat-input" id="ai-chat-input" placeholder="Ask a question..." autocomplete="off">
+        <button type="submit" class="ai-chat-send-btn" id="ai-chat-send-btn" aria-label="Send Message">➤</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
