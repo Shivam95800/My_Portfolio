@@ -476,29 +476,30 @@
     <div class="container">
       <div class="reveal">
         <div class="section-eyebrow">projects</div>
-        <h2 class="section-heading">Featured Works</h2>
-        <p class="section-subtitle">Real-world systems combining AI, face recognition pipelines, NLP, and scalable web architectures.</p>
+        <h2 class="section-heading">Featured Works & Repositories</h2>
+        <p class="section-subtitle">Real-world systems combining AI, face recognition, NLP text summarization, full-stack web platforms, and data structures. Every project includes its live deployment and source code.</p>
       </div>
 
       <!-- Interactive Projects Toolbar (Filter Tabs + Real-Time Search) -->
       <div class="projects-toolbar reveal">
         <div class="project-filters">
-          <button class="project-filter-btn active" data-filter="all">All Projects (6)</button>
-          <button class="project-filter-btn" data-filter="ai">🤖 AI & Computer Vision</button>
+          <button class="project-filter-btn active" data-filter="all">All Projects (12)</button>
+          <button class="project-filter-btn" data-filter="ai">🤖 AI & Vision</button>
           <button class="project-filter-btn" data-filter="web">🌐 Full-Stack & Web</button>
           <button class="project-filter-btn" data-filter="nlp">📝 NLP & Chatbots</button>
+          <button class="project-filter-btn" data-filter="dsa">💡 DSA & Java</button>
         </div>
 
         <div class="project-search-box">
           <span class="project-search-icon">🔍</span>
-          <input type="text" id="project-search-input" placeholder="Search tech or title (e.g. Python, React)..." autocomplete="off">
+          <input type="text" id="project-search-input" placeholder="Search by tech or title (e.g. Python, React, Java)..." autocomplete="off">
         </div>
       </div>
 
       <div class="projects-grid" id="projects-grid">
         
-        <!-- Project 1: AI Attendance System -->
-        <div class="project-card reveal tilt-card spotlight-card" data-category="ai" data-tags="python opencv streamlit flask computer-vision ai attendance">
+        <!-- Project 1: SnapClass AI Attendance -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="ai" data-tags="python opencv streamlit flask computer-vision ai attendance streamlits">
           <div class="project-card-top-accent"></div>
           <div>
             <div class="project-header">
@@ -507,7 +508,7 @@
             </div>
             <h3 class="project-title">SnapClass AI Attendance</h3>
             <p class="project-desc">
-              An intelligent attendance management system combining real-time face recognition with voice-based verification. Streamlit & Flask backend logs attendance automatically, cutting manual entry time by ~90% with anti-spoofing validation.
+              Intelligent classroom attendance management system combining real-time face recognition with voice-based verification. Streamlit and Flask backend automatically logs attendance cutting manual entry time by ~90%.
             </p>
           </div>
           <div>
@@ -529,7 +530,7 @@
         </div>
 
         <!-- Project 2: Homely Hub -->
-        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="mongodb express react nodejs full-stack web booking vercel">
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="mongodb express react nodejs full-stack web booking vercel javascript">
           <div class="project-card-top-accent"></div>
           <div>
             <div class="project-header">
@@ -538,7 +539,7 @@
             </div>
             <h3 class="project-title">Homely Hub</h3>
             <p class="project-desc">
-              A full-stack hotel and resort booking platform where customers browse, search, and book rooms with interactive UI, RESTful APIs, and MongoDB cloud storage.
+              Full-stack accommodation and resort booking platform with room browsing, interactive reservations, RESTful backend APIs, and MongoDB persistent cloud storage.
             </p>
           </div>
           <div>
@@ -560,7 +561,7 @@
         </div>
 
         <!-- Project 3: TEXT_SUMMARIZATION -->
-        <div class="project-card reveal tilt-card spotlight-card" data-category="nlp ai" data-tags="python nlp nltk text-summarization machine-learning render">
+        <div class="project-card reveal tilt-card spotlight-card" data-category="nlp ai" data-tags="python nlp nltk text-summarization machine-learning render ai">
           <div class="project-card-top-accent"></div>
           <div>
             <div class="project-header">
@@ -569,7 +570,7 @@
             </div>
             <h3 class="project-title">AI Text Summarization</h3>
             <p class="project-desc">
-              Natural Language Processing application that distills extensive articles and documents into concise, highly informative summaries with configurable length and keypoint extraction.
+              Natural Language Processing application that distills long articles, news, and research papers into concise, accurate summaries with configurable bullet points and length.
             </p>
           </div>
           <div>
@@ -591,7 +592,7 @@
         </div>
 
         <!-- Project 4: AI Personal Assistant -->
-        <div class="project-card reveal tilt-card spotlight-card" data-category="ai web" data-tags="python speech-recognition ai-assistant automation render">
+        <div class="project-card reveal tilt-card spotlight-card" data-category="ai web" data-tags="python speech-recognition ai-assistant automation render ai">
           <div class="project-card-top-accent"></div>
           <div>
             <div class="project-header">
@@ -600,7 +601,7 @@
             </div>
             <h3 class="project-title">AI Personal Assistant</h3>
             <p class="project-desc">
-              Intelligent virtual assistant with speech recognition, text commands, task automation, and instant web lookup capabilities.
+              Virtual desktop & web assistant supporting speech recognition, voice synthesis, automated web searching, workflow commands, and natural dialogue.
             </p>
           </div>
           <div>
@@ -622,7 +623,7 @@
         </div>
 
         <!-- Project 5: Online Quiz Platform -->
-        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="javascript html css quiz interactive vercel">
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="javascript html css quiz interactive vercel frontend">
           <div class="project-card-top-accent"></div>
           <div>
             <div class="project-header">
@@ -631,7 +632,7 @@
             </div>
             <h3 class="project-title">Online Quiz Platform</h3>
             <p class="project-desc">
-              Interactive examination and quiz assessment system with live score calculation, timed questions, categorized topics, and instant performance feedback.
+              Interactive examination platform featuring multi-category question sets, timer constraints, instant score calculation, and performance breakdown summaries.
             </p>
           </div>
           <div>
@@ -652,17 +653,17 @@
           </div>
         </div>
 
-        <!-- Project 6: Rural Health Chatbot -->
-        <div class="project-card reveal tilt-card spotlight-card" data-category="nlp ai" data-tags="python nlp healthcare chatbot vercel">
+        <!-- Project 6: Rural Health Chatbot (Python) -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="nlp ai" data-tags="python nlp healthcare chatbot vercel ai medical">
           <div class="project-card-top-accent"></div>
           <div>
             <div class="project-header">
               <span class="project-year">2025</span>
-              <span class="project-category">Healthcare AI</span>
+              <span class="project-category">Healthcare AI (Final Year)</span>
             </div>
             <h3 class="project-title">Rural Health Awareness Chatbot</h3>
             <p class="project-desc">
-              Healthcare awareness chatbot engineered for underserved rural communities, providing preliminary symptom guidance, hygiene awareness, and medical advisory information.
+              Final-year project: AI-driven conversational health advisor tailored for underserved rural communities to deliver preliminary medical guidance, first aid, and hygiene advisories.
             </p>
           </div>
           <div>
@@ -683,11 +684,197 @@
           </div>
         </div>
 
-        <!-- Empty Search State -->
+        <!-- Project 7: Rural Health Chatbot (JavaScript) -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web nlp" data-tags="javascript healthcare chatbot vercel frontend health">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2025</span>
+              <span class="project-category">Healthcare Chatbot</span>
+            </div>
+            <h3 class="project-title">Health Awareness Web Bot</h3>
+            <p class="project-desc">
+              Lightweight, fast client-side healthcare awareness chatbot application built to provide quick answers to common health inquiries and disease prevention tips.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">Healthcare</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/CHATBOT" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://chatbot-alpha-lemon.vercel.app" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: CODSOFT_2 Landing Page -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="html css javascript landing-page codsoft vercel frontend">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2025</span>
+              <span class="project-category">Landing Page Design</span>
+            </div>
+            <h3 class="project-title">Modern Product Landing Page</h3>
+            <p class="project-desc">
+              High-impact, conversion-focused responsive product landing page with polished hero layout, feature showcases, customer testimonials, and smooth scrolling.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/CODSOFT_2" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://codsoft-2-omega.vercel.app" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: CODSOFT_3 Calculator -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="javascript html css calculator math codsoft vercel">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2025</span>
+              <span class="project-category">Utility Web App</span>
+            </div>
+            <h3 class="project-title">Interactive Smart Calculator</h3>
+            <p class="project-desc">
+              Sleek web calculator designed with CSS Grid and JavaScript evaluation logic, handling arithmetic operations, chained formulas, clear, and backspace.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">CSS Grid</span>
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/CODSOFT_3" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://codsoft-3-iota.vercel.app" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10: Cognifyz Internship Suite -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="html css javascript cognifyz internship vercel">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2025</span>
+              <span class="project-category">Frontend Internship</span>
+            </div>
+            <h3 class="project-title">Cognifyz Web Task Suite</h3>
+            <p class="project-desc">
+              Industry frontend development project suite covering modern UI patterns, responsive grid designs, interactive event listeners, and cross-browser compatibility.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/Cognifyz" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://cognifyz-beige.vercel.app" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 11: Data Structures & Algorithms (Java) -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="dsa" data-tags="java dsa algorithms data-structures leetcode problem-solving">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2026</span>
+              <span class="project-category">Core Computer Science</span>
+            </div>
+            <h3 class="project-title">DSA & Problem Solving in Java</h3>
+            <p class="project-desc">
+              Clean, optimized Java implementations of 110+ Data Structures and Algorithms problems covering Binary Trees, Hash Tables, Two Pointers, Sliding Window, Graphs, and Dynamic Programming.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Data Structures</span>
+              <span class="project-tag">Algorithms</span>
+              <span class="project-tag">LeetCode</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/dsa" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://github.com/Shivam95800/dsa" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Source Code</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 12: CODSOFT1 Portfolio v1 -->
+        <div class="project-card reveal tilt-card spotlight-card" data-category="web" data-tags="html css javascript portfolio codsoft vercel">
+          <div class="project-card-top-accent"></div>
+          <div>
+            <div class="project-header">
+              <span class="project-year">2025</span>
+              <span class="project-category">Personal Portfolio v1</span>
+            </div>
+            <h3 class="project-title">Developer Portfolio (CodSoft Edition)</h3>
+            <p class="project-desc">
+              First-generation responsive personal developer portfolio developed during the CodSoft Web Development internship showcasing initial projects and technical journey.
+            </p>
+          </div>
+          <div>
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">CSS3</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Vercel</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Shivam95800/CODSOFT1" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>GitHub</span> ↗
+              </a>
+              <a href="https://codsoft-1-omega.vercel.app" target="_blank" rel="noopener noreferrer" class="badge-btn interactive">
+                <span>Live Demo</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- No Results Fallback -->
         <div class="projects-empty-state is-hidden" id="projects-empty-state">
           <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
           <h4>No matching projects found</h4>
-          <p>Try searching for different keywords like "Python", "React", or "NLP".</p>
+          <p>Try searching for different keywords like "Python", "React", "Java", or "NLP".</p>
         </div>
 
       </div>

@@ -837,12 +837,19 @@ function initCommandPalette() {
 
     { title: 'Go to Contact', category: 'Navigation', icon: '📬', action: () => scrollToSection('contact') },
 
-    // Featured Projects
+        // Featured Projects
     { title: 'SnapClass AI Attendance (Live Streamlit)', category: 'Projects', icon: '📸', action: () => window.open('https://snapclass-attendance-gcet.streamlit.app/', '_blank') },
+    { title: 'SnapClass GitHub Repository', category: 'GitHub', icon: '🐙', action: () => window.open('https://github.com/Shivam95800/SnapClass-Attendance', '_blank') },
     { title: 'Homely Hub Booking Platform (Live Vercel)', category: 'Projects', icon: '🏡', action: () => window.open('https://homely-hub-omega.vercel.app/', '_blank') },
+    { title: 'Homely Hub GitHub Repository', category: 'GitHub', icon: '🐙', action: () => window.open('https://github.com/Shivam95800/HomelyHub', '_blank') },
     { title: 'AI Text Summarization Web App (Live Render)', category: 'Projects', icon: '📝', action: () => window.open('https://text-summarization-app-i2dm.onrender.com/', '_blank') },
+    { title: 'AI Text Summarization GitHub Repository', category: 'GitHub', icon: '🐙', action: () => window.open('https://github.com/Shivam95800/TEXT_SUMMARIZATION', '_blank') },
     { title: 'AI Personal Assistant (Live Render)', category: 'Projects', icon: '🤖', action: () => window.open('https://ai-personal-assistant-2-tl0h.onrender.com/', '_blank') },
-    { title: 'Interactive Online Quiz Platform (Live Vercel)', category: 'Projects', icon: '⚡', action: () => window.open('https://online-quiz-platform-two.vercel.app', '_blank') },
+    { title: 'Online Quiz Platform (Live Vercel)', category: 'Projects', icon: '⚡', action: () => window.open('https://online-quiz-platform-two.vercel.app', '_blank') },
+    { title: 'Rural Health Awareness Chatbot (Live Vercel)', category: 'Projects', icon: '🩺', action: () => window.open('https://chatbot-1-liart.vercel.app', '_blank') },
+    { title: 'Modern Product Landing Page (Live Vercel)', category: 'Projects', icon: '💻', action: () => window.open('https://codsoft-2-omega.vercel.app', '_blank') },
+    { title: 'Smart Calculator (Live Vercel)', category: 'Projects', icon: '🧮', action: () => window.open('https://codsoft-3-iota.vercel.app', '_blank') },
+    { title: 'Java DSA & Algorithms Repository', category: 'Projects', icon: '☕', action: () => window.open('https://github.com/Shivam95800/dsa', '_blank') },
 
     // Themes
     { title: 'Switch to Cyber Teal Theme', category: 'Theme', icon: '🟢', action: () => setTheme('teal') },
