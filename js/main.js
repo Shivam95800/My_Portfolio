@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollReveal();
   initContactForm();
+  initWebAudioSFX();
+  initCommandPalette();
+  initProjectsFilterAndSearch();
+  initShivamAIAssistant();
 });
 
 /* ==========================================================================
@@ -681,5 +685,533 @@ function initContactForm() {
 
     window.location.href = `mailto:shivam301102@gmail.com?subject=${subject}&body=${body}`;
     e.preventDefault();
+  });
+}
+
+
+/* ==========================================================================
+   15. Web Audio Interactive Sound Effects (SFX)
+   ========================================================================== */
+let sfxEnabled = localStorage.getItem('shivam_sfx') !== 'false';
+let audioCtx = null;
+
+function getAudioContext() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) {
+      audioCtx = new AudioContext();
+    }
+  }
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  return audioCtx;
+}
+
+function playTone(freq, type = 'sine', duration = 0.05, gainValue = 0.04) {
+  if (!sfxEnabled) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+    gain.gain.setValueAtTime(gainValue, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + duration);
+  } catch (e) {
+    // AudioContext fallback
+  }
+}
+
+function playSfxClick() {
+  playTone(880, 'triangle', 0.04, 0.05);
+}
+
+function playSfxHover() {
+  playTone(380, 'sine', 0.02, 0.015);
+}
+
+function playSfxSuccess() {
+  if (!sfxEnabled) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+
+  try {
+    const now = ctx.currentTime;
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc1.frequency.setValueAtTime(523.25, now); // C5
+    osc2.frequency.setValueAtTime(659.25, now + 0.08); // E5
+
+    gain.gain.setValueAtTime(0.05, now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.25);
+
+    osc1.connect(gain);
+    osc2.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc1.start(now);
+    osc1.stop(now + 0.08);
+    osc2.start(now + 0.08);
+    osc2.stop(now + 0.25);
+  } catch(e) {}
+}
+
+function playSfxOpen() {
+  playTone(440, 'sine', 0.08, 0.04);
+}
+
+function initWebAudioSFX() {
+  const soundBtn = document.getElementById('sound-toggle-btn');
+  const iconOn = document.getElementById('sound-icon-on');
+  const iconOff = document.getElementById('sound-icon-off');
+
+  function updateIcons() {
+    if (!iconOn || !iconOff) return;
+    if (sfxEnabled) {
+      iconOn.classList.remove('is-hidden');
+      iconOff.classList.add('is-hidden');
+      if (soundBtn) soundBtn.title = "Sound Effects: ON (Click to mute)";
+    } else {
+      iconOn.classList.add('is-hidden');
+      iconOff.classList.remove('is-hidden');
+      if (soundBtn) soundBtn.title = "Sound Effects: OFF (Click to unmute)";
+    }
+  }
+
+  updateIcons();
+
+  if (soundBtn) {
+    soundBtn.addEventListener('click', () => {
+      sfxEnabled = !sfxEnabled;
+      localStorage.setItem('shivam_sfx', sfxEnabled ? 'true' : 'false');
+      updateIcons();
+      if (sfxEnabled) playSfxSuccess();
+    });
+  }
+
+  // Attach sound to interactive buttons
+  const soundTargets = document.querySelectorAll('button, .btn-primary, .btn-secondary, .badge-btn, .nav-link, .theme-dot-btn');
+  soundTargets.forEach(el => {
+    el.addEventListener('click', () => playSfxClick());
+    el.addEventListener('mouseenter', () => playSfxHover());
+  });
+}
+
+/* ==========================================================================
+   16. Command Palette (Ctrl + K / Cmd + K)
+   ========================================================================== */
+function initCommandPalette() {
+  const overlay = document.getElementById('cmd-palette-overlay');
+  const input = document.getElementById('cmd-palette-input');
+  const resultsContainer = document.getElementById('cmd-palette-results');
+  const triggerBtn = document.getElementById('cmd-palette-trigger');
+
+  if (!overlay || !input || !resultsContainer) return;
+
+  const commands = [
+    // Navigation
+    { title: 'Go to About Section', category: 'Navigation', icon: '👤', action: () => scrollToSection('about') },
+    { title: 'Go to Technical Skills', category: 'Navigation', icon: '⚡', action: () => scrollToSection('skills') },
+    { title: 'Go to Education & Academics', category: 'Navigation', icon: '🎓', action: () => scrollToSection('education') },
+    { title: 'Go to Experience & Internships', category: 'Navigation', icon: '💼', action: () => scrollToSection('experience') },
+    { title: 'Go to Featured Projects', category: 'Navigation', icon: '🚀', action: () => scrollToSection('projects') },
+    { title: 'Go to Awards & Certifications', category: 'Navigation', icon: '🏆', action: () => scrollToSection('awards') },
+    { title: 'Go to Contact', category: 'Navigation', icon: '📬', action: () => scrollToSection('contact') },
+
+    // Featured Projects
+    { title: 'SnapClass AI Attendance (Live Streamlit)', category: 'Projects', icon: '📸', action: () => window.open('https://snapclass-attendance-gcet.streamlit.app/', '_blank') },
+    { title: 'Homely Hub Booking Platform (Live Vercel)', category: 'Projects', icon: '🏡', action: () => window.open('https://homely-hub-omega.vercel.app/', '_blank') },
+    { title: 'AI Text Summarization Web App (Live Render)', category: 'Projects', icon: '📝', action: () => window.open('https://text-summarization-app-i2dm.onrender.com/', '_blank') },
+    { title: 'AI Personal Assistant (Live Render)', category: 'Projects', icon: '🤖', action: () => window.open('https://ai-personal-assistant-2-tl0h.onrender.com/', '_blank') },
+    { title: 'Interactive Online Quiz Platform (Live Vercel)', category: 'Projects', icon: '⚡', action: () => window.open('https://online-quiz-platform-two.vercel.app', '_blank') },
+
+    // Themes
+    { title: 'Switch to Cyber Teal Theme', category: 'Theme', icon: '🟢', action: () => setTheme('teal') },
+    { title: 'Switch to Neon Amber Theme', category: 'Theme', icon: '🟡', action: () => setTheme('amber') },
+    { title: 'Switch to Neural Purple Theme', category: 'Theme', icon: '🟣', action: () => setTheme('purple') },
+
+    // Quick Actions
+    { title: 'Download Resume (PDF)', category: 'Action', icon: '📄', action: () => downloadResume() },
+    { title: 'Copy Email Address (shivam301102@gmail.com)', category: 'Action', icon: '📋', action: () => copyEmail() },
+    { title: 'Open GitHub Profile', category: 'Social', icon: '🐙', action: () => window.open('https://github.com/Shivam95800', '_blank') },
+    { title: 'Open LinkedIn Profile', category: 'Social', icon: '💼', action: () => window.open('https://www.linkedin.com/in/shivamsonitech', '_blank') },
+    { title: 'Ask Shivam AI Assistant', category: 'Assistant', icon: '🤖', action: () => openAIAssistant() },
+    { title: 'Toggle Audio SFX (Sound Effects)', category: 'Audio', icon: '🔊', action: () => document.getElementById('sound-toggle-btn')?.click() }
+  ];
+
+  let selectedIndex = 0;
+  let filteredCommands = [...commands];
+
+  function openPalette() {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    input.value = '';
+    renderResults(commands);
+    playSfxOpen();
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function closePalette() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    closePalette();
+  }
+
+  function setTheme(theme) {
+    const btn = document.querySelector(`[data-set-theme="${theme}"]`);
+    if (btn) btn.click();
+    closePalette();
+  }
+
+  function downloadResume() {
+    const resumeBtn = document.getElementById('btn-download-resume');
+    if (resumeBtn) resumeBtn.click();
+    closePalette();
+  }
+
+  function copyEmail() {
+    navigator.clipboard.writeText('shivam301102@gmail.com');
+    const toast = document.getElementById('toast-msg');
+    const toastText = document.getElementById('toast-text');
+    if (toast && toastText) {
+      toastText.textContent = "Copied shivam301102@gmail.com!";
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+    playSfxSuccess();
+    closePalette();
+  }
+
+  function openAIAssistant() {
+    closePalette();
+    const bubble = document.getElementById('ai-chat-bubble');
+    if (bubble) bubble.click();
+  }
+
+  function renderResults(list) {
+    filteredCommands = list;
+    selectedIndex = 0;
+    resultsContainer.innerHTML = '';
+
+    if (list.length === 0) {
+      resultsContainer.innerHTML = '<div style="padding: 24px; text-align: center; color: var(--text-dim);">No matching commands found.</div>';
+      return;
+    }
+
+    let currentCat = '';
+    list.forEach((cmd, idx) => {
+      if (cmd.category !== currentCat) {
+        currentCat = cmd.category;
+        const groupEl = document.createElement('div');
+        groupEl.className = 'cmd-palette-group-title';
+        groupEl.textContent = currentCat;
+        resultsContainer.appendChild(groupEl);
+      }
+
+      const itemEl = document.createElement('div');
+      itemEl.className = `cmd-palette-item ${idx === selectedIndex ? 'active' : ''}`;
+      itemEl.innerHTML = `
+        <div class="cmd-palette-item-left">
+          <span class="cmd-palette-item-icon">${cmd.icon}</span>
+          <span>${cmd.title}</span>
+        </div>
+        <span class="cmd-palette-item-badge">${cmd.category}</span>
+      `;
+
+      itemEl.addEventListener('click', () => {
+        playSfxClick();
+        cmd.action();
+      });
+
+      resultsContainer.appendChild(itemEl);
+    });
+  }
+
+  input.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase().trim();
+    if (!q) {
+      renderResults(commands);
+      return;
+    }
+    const matches = commands.filter(c => 
+      c.title.toLowerCase().includes(q) || 
+      c.category.toLowerCase().includes(q)
+    );
+    renderResults(matches);
+  });
+
+  input.addEventListener('keydown', (e) => {
+    const items = resultsContainer.querySelectorAll('.cmd-palette-item');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (items.length > 0) {
+        items[selectedIndex]?.classList.remove('active');
+        selectedIndex = (selectedIndex + 1) % items.length;
+        items[selectedIndex]?.classList.add('active');
+        items[selectedIndex]?.scrollIntoView({ block: 'nearest' });
+        playSfxHover();
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (items.length > 0) {
+        items[selectedIndex]?.classList.remove('active');
+        selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+        items[selectedIndex]?.classList.add('active');
+        items[selectedIndex]?.scrollIntoView({ block: 'nearest' });
+        playSfxHover();
+      }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (filteredCommands[selectedIndex]) {
+        playSfxClick();
+        filteredCommands[selectedIndex].action();
+      }
+    } else if (e.key === 'Escape') {
+      closePalette();
+    }
+  });
+
+  // Hotkey: Ctrl+K / Cmd+K
+  window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (overlay.classList.contains('open')) {
+        closePalette();
+      } else {
+        openPalette();
+      }
+    } else if (e.key === 'Escape' && overlay.classList.contains('open')) {
+      closePalette();
+    }
+  });
+
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', openPalette);
+  }
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closePalette();
+  });
+}
+
+/* ==========================================================================
+   17. Interactive Projects Filter & Search
+   ========================================================================== */
+function initProjectsFilterAndSearch() {
+  const filterBtns = document.querySelectorAll('.project-filter-btn');
+  const searchInput = document.getElementById('project-search-input');
+  const cards = document.querySelectorAll('.project-card');
+  const emptyState = document.getElementById('projects-empty-state');
+
+  if (!filterBtns.length || !cards.length) return;
+
+  let activeFilter = 'all';
+  let searchTerm = '';
+
+  function applyFilter() {
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category') || '';
+      const tags = card.getAttribute('data-tags') || '';
+      const title = card.querySelector('.project-title')?.textContent.toLowerCase() || '';
+      const desc = card.querySelector('.project-desc')?.textContent.toLowerCase() || '';
+
+      const matchesCategory = (activeFilter === 'all') || category.includes(activeFilter);
+      const matchesSearch = !searchTerm || 
+        title.includes(searchTerm) || 
+        desc.includes(searchTerm) || 
+        tags.toLowerCase().includes(searchTerm);
+
+      if (matchesCategory && matchesSearch) {
+        card.classList.remove('is-hidden');
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        visibleCount++;
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.classList.remove('is-hidden');
+      } else {
+        emptyState.classList.add('is-hidden');
+      }
+    }
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.getAttribute('data-filter');
+      playSfxClick();
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value.toLowerCase().trim();
+      applyFilter();
+    });
+  }
+}
+
+/* ==========================================================================
+   18. Ask Shivam AI Chatbot Assistant
+   ========================================================================== */
+function initShivamAIAssistant() {
+  const bubble = document.getElementById('ai-chat-bubble');
+  const modal = document.getElementById('ai-chat-modal');
+  const closeBtn = document.getElementById('ai-chat-close-btn');
+  const chatBody = document.getElementById('ai-chat-body');
+  const form = document.getElementById('ai-chat-form');
+  const input = document.getElementById('ai-chat-input');
+
+  if (!bubble || !modal || !form || !input) return;
+
+  function toggleChat() {
+    const isOpen = modal.classList.contains('open');
+    if (isOpen) {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    } else {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      playSfxOpen();
+      setTimeout(() => input.focus(), 100);
+    }
+  }
+
+  bubble.addEventListener('click', toggleChat);
+  if (closeBtn) closeBtn.addEventListener('click', toggleChat);
+
+  function appendUserMessage(text) {
+    const msgEl = document.createElement('div');
+    msgEl.className = 'ai-msg user';
+    msgEl.innerHTML = `<div class="ai-msg-bubble">${escapeHtml(text)}</div>`;
+    chatBody.appendChild(msgEl);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function appendBotMessage(html) {
+    const msgEl = document.createElement('div');
+    msgEl.className = 'ai-msg bot';
+    msgEl.innerHTML = `<div class="ai-msg-bubble">${html}</div>`;
+    chatBody.appendChild(msgEl);
+    chatBody.scrollTop = chatBody.scrollHeight;
+    playSfxSuccess();
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function getBotResponse(rawQuery) {
+    const q = rawQuery.toLowerCase();
+
+    if (q.includes('who is') || q.includes('about') || q.includes('intro') || q.includes('shivam')) {
+      return `<strong>Shivam Soni</strong> is a final-year <strong>B.Tech CSE (Data Science)</strong> student at <strong>Galgotias College of Engineering and Technology</strong> (Graduating 2027). He specializes in Python, Machine Learning, SQL, and Full-Stack Development, with 110+ LeetCode problems solved!`;
+    }
+
+    if (q.includes('project') || q.includes('work') || q.includes('portfolio') || q.includes('snapclass') || q.includes('homely')) {
+      return `Here are Shivam's flagship deployed projects:<br><br>
+      • 📸 <strong>SnapClass AI Attendance:</strong> Face & voice verification system built with Python & Streamlit.<br>
+      • 🏡 <strong>Homely Hub:</strong> Full-stack accommodation booking app (React, Express, MongoDB).<br>
+      • 📝 <strong>AI Text Summarization:</strong> NLP article distillation tool deployed on Render.<br>
+      • 🤖 <strong>AI Personal Assistant:</strong> Intelligent desktop/web assistant.<br><br>
+      <a href="#projects" onclick="document.getElementById('ai-chat-close-btn').click();" style="color:var(--accent); text-decoration:underline;">Click here to view all projects →</a>`;
+    }
+
+    if (q.includes('skill') || q.includes('tech') || q.includes('language') || q.includes('stack')) {
+      return `Shivam's primary technical skills:<br><br>
+      • <strong>Languages:</strong> Python, Java, JavaScript, SQL, C<br>
+      • <strong>AI / ML:</strong> OpenCV, NLP, Scikit-Learn, Streamlit<br>
+      • <strong>Web & DB:</strong> React, Node.js, Express, Flask, MongoDB, HTML/CSS<br>
+      • <strong>Problem Solving:</strong> 110+ LeetCode problems solved with a focus on Data Structures & Algorithms.`;
+    }
+
+    if (q.includes('college') || q.includes('cgpa') || q.includes('education') || q.includes('graduat')) {
+      return `🎓 <strong>Education:</strong><br><br>
+      • <strong>College:</strong> Galgotias College of Engineering and Technology, Greater Noida<br>
+      • <strong>Degree:</strong> B.Tech in Computer Science & Engineering (Data Science)<br>
+      • <strong>Current CGPA:</strong> 7.41 / 10.0<br>
+      • <strong>Graduation Year:</strong> 2027`;
+    }
+
+    if (q.includes('resume') || q.includes('cv') || q.includes('download')) {
+      return `📄 You can download Shivam's official resume right now:<br><br>
+      <a href="assets/resume.pdf" download="Shivam_Soni_Resume.pdf" class="badge-btn" style="display:inline-flex; margin-top:4px; padding:4px 12px; background:var(--accent); color:var(--bg-ink); font-weight:600; border-radius:12px;">📥 Download Resume (PDF)</a>`;
+    }
+
+    if (q.includes('contact') || q.includes('email') || q.includes('hire') || q.includes('reach') || q.includes('phone')) {
+      return `📬 You can connect with Shivam directly:<br><br>
+      • <strong>Email:</strong> <a href="mailto:shivam301102@gmail.com" style="color:var(--accent);">shivam301102@gmail.com</a><br>
+      • <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shivamsonitech" target="_blank" style="color:var(--accent);">linkedin.com/in/shivamsonitech</a><br>
+      • <strong>GitHub:</strong> <a href="https://github.com/Shivam95800" target="_blank" style="color:var(--accent);">github.com/Shivam95800</a>`;
+    }
+
+    if (q.includes('leetcode') || q.includes('dsa') || q.includes('algorithm')) {
+      return `💡 Shivam has solved <strong>110+ Data Structures & Algorithms problems</strong> on LeetCode across Arrays, Two Pointers, Trees, Graphs, and Dynamic Programming in Java and Python.`;
+    }
+
+    if (q.includes('hi') || q.includes('hello') || q.includes('hey')) {
+      return `Hello! How can I help you learn more about Shivam's work today? Try asking about his <strong>projects</strong>, <strong>skills</strong>, or <strong>resume</strong>!`;
+    }
+
+    return `Thanks for asking! Shivam is an aspiring software engineer and data scientist graduating in 2027. You can check his <a href="#projects" onclick="document.getElementById('ai-chat-close-btn').click();" style="color:var(--accent);">Projects</a>, download his <a href="assets/resume.pdf" style="color:var(--accent);">Resume</a>, or email him at <a href="mailto:shivam301102@gmail.com" style="color:var(--accent);">shivam301102@gmail.com</a>.`;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = input.value.trim();
+    if (!query) return;
+
+    appendUserMessage(query);
+    input.value = '';
+    playSfxClick();
+
+    // Simulated typing delay
+    setTimeout(() => {
+      const reply = getBotResponse(query);
+      appendBotMessage(reply);
+    }, 450);
+  });
+
+  // Pill click triggers
+  chatBody.addEventListener('click', (e) => {
+    const pill = e.target.closest('.ai-pill');
+    if (pill) {
+      const prompt = pill.getAttribute('data-prompt');
+      if (prompt) {
+        appendUserMessage(prompt);
+        playSfxClick();
+        setTimeout(() => {
+          const reply = getBotResponse(prompt);
+          appendBotMessage(reply);
+        }, 350);
+      }
+    }
   });
 }
