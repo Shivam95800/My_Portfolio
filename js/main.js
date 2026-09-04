@@ -829,6 +829,7 @@ function initCommandPalette() {
     { title: 'Go to Experience & Internships', category: 'Navigation', icon: '💼', action: () => scrollToSection('experience') },
     { title: 'Go to Featured Projects', category: 'Navigation', icon: '🚀', action: () => scrollToSection('projects') },
         // Verified Certificates
+    { title: 'View NPTEL Machine Learning Certificate - IIT Madras (PDF)', category: 'Certificates', icon: '🎓', action: () => window.open('assets/certificates/nptel-iit-madras-machine-learning.pdf', '_blank') },
     { title: 'View Oracle Cloud AI Certified Associate (PDF)', category: 'Certificates', icon: '🏆', action: () => window.open('assets/certificates/oracle-cloud-ai-foundations.pdf', '_blank') },
     { title: 'View Infosys Java Fundamentals Certificate (PDF)', category: 'Certificates', icon: '☕', action: () => window.open('assets/certificates/infosys-java-programming-fundamentals.pdf', '_blank') },
     { title: 'View Infosys HTML Advanced Certificate (PDF)', category: 'Certificates', icon: '🌐', action: () => window.open('assets/certificates/infosys-html-advanced.pdf', '_blank') },
