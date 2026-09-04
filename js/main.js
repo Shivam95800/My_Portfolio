@@ -266,7 +266,7 @@ function initTerminalTabsAndCommands() {
           <div class="result-row" style="margin-top: 6px;">
             <span class="result-key">college</span>
             <span class="result-arrow">→</span>
-            <span class="result-val">Galgotias College (CGPA: 7.41)</span>
+            <span class="result-val">Galgotias College (CGPA: 7+)</span>
           </div>
           <div class="result-row">
             <span class="result-key">cert</span>
@@ -1171,7 +1171,7 @@ function initShivamAIAssistant() {
       return `🎓 <strong>Education:</strong><br><br>
       • <strong>College:</strong> Galgotias College of Engineering and Technology, Greater Noida<br>
       • <strong>Degree:</strong> B.Tech in Computer Science & Engineering (Data Science)<br>
-      • <strong>Current CGPA:</strong> 7.41 / 10.0<br>
+      • <strong>Current CGPA:</strong> 7+ / 10.0<br>
       • <strong>Graduation Year:</strong> 2027`;
     }
 
