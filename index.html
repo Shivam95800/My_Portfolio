@@ -210,24 +210,43 @@
           </div>
         </div>
 
-        <!-- Right: Profile Photo Card -->
-        <div class="profile-card reveal tilt-card spotlight-card" id="hero-profile-card">
-          <div class="profile-img-wrap">
+        <!-- Right: Profile Photo Card with Cyber HUD Holographic Frame -->
+        <div class="profile-card reveal tilt-card spotlight-card hud-frame" id="hero-profile-card">
+          <!-- Cyber HUD Corner Brackets -->
+          <span class="hud-corner hud-corner-tl" aria-hidden="true"></span>
+          <span class="hud-corner hud-corner-tr" aria-hidden="true"></span>
+          <span class="hud-corner hud-corner-bl" aria-hidden="true"></span>
+          <span class="hud-corner hud-corner-br" aria-hidden="true"></span>
+
+          <!-- HUD Header Telemetry -->
+          <div class="hud-header-bar">
             <div class="badge-location">
-              <span class="badge-dot"></span> India / Greater Noida
+              <span class="badge-dot"></span> Greater Noida, India
             </div>
-            <img src="assets/profile.jpg" alt="Shivam Soni" class="profile-img" id="profile-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%23121a2c\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%234fd1c5\' font-size=\'48\' font-family=\'sans-serif\'>SS</text></svg>'">
+            <div class="hud-status-badge">
+              <span class="hud-code-prefix">DEV://</span>ONLINE
+            </div>
           </div>
+
+          <!-- Holographic Image Viewport -->
+          <div class="profile-img-wrap">
+            <div class="hud-scanner-line" aria-hidden="true"></div>
+            <img src="assets/profile.jpg" alt="Shivam Soni" class="profile-img" id="profile-img" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\' viewBox=\'0 0 400 400\'><rect width=\'400\' height=\'400\' fill=\'%23121a2c\'/><text x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%234fd1c5\' font-size=\'48\' font-family=\'sans-serif\'>SS</text></svg>'">
+            <div class="hud-img-vignette" aria-hidden="true"></div>
+            <div class="hud-role-pill">Data Science & AI</div>
+          </div>
+
+          <!-- Enhanced HUD Stats Pods -->
           <div class="profile-stats-grid">
-            <div class="stat-item">
+            <div class="stat-item hud-stat-pod">
               <span class="stat-val" data-counter="110" data-suffix="+">110+</span>
               <span class="stat-lbl">LeetCode</span>
             </div>
-            <div class="stat-item">
+            <div class="stat-item hud-stat-pod">
               <span class="stat-val" data-counter="7" data-suffix="+">7+</span>
               <span class="stat-lbl">CGPA</span>
             </div>
-            <div class="stat-item">
+            <div class="stat-item hud-stat-pod">
               <span class="stat-val" data-counter="2027">2027</span>
               <span class="stat-lbl">Graduation</span>
             </div>

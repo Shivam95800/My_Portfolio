@@ -827,62 +827,100 @@ textarea:focus-visible {
   color: var(--accent);
 }
 
-/* Hero Right Photo Card */
+/* ==========================================================================
+   Hero Right Photo Card — Cyber HUD Holographic Frame
+   ========================================================================== */
 .profile-card {
   background: var(--panel);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 18px;
-  box-shadow: var(--shadow-panel);
+  box-shadow: var(--shadow-panel), 0 0 25px rgba(var(--accent-rgb), 0.08);
   position: relative;
-  transition: border-color var(--transition-smooth), transform var(--transition-tilt);
+  transition: all var(--transition-smooth);
   transform-style: preserve-3d;
+  overflow: visible;
 }
 
 .profile-card:hover {
-  border-color: var(--accent);
+  border-color: rgba(var(--accent-rgb), 0.6);
+  box-shadow: var(--shadow-panel), 0 0 35px var(--accent-glow);
 }
 
-.profile-img-wrap {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-  background: var(--panel-solid);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+/* Futuristic Cyber HUD Corner Accents */
+.hud-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 10;
+  transition: all var(--transition-smooth);
 }
 
-.profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.hud-corner-tl {
+  top: -1px;
+  left: -1px;
+  border-top: 2.5px solid var(--accent);
+  border-left: 2.5px solid var(--accent);
+  border-top-left-radius: var(--radius-lg);
 }
 
-.profile-card:hover .profile-img {
-  transform: scale(1.04);
+.hud-corner-tr {
+  top: -1px;
+  right: -1px;
+  border-top: 2.5px solid var(--accent);
+  border-right: 2.5px solid var(--accent);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.hud-corner-bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 2.5px solid var(--accent);
+  border-left: 2.5px solid var(--accent);
+  border-bottom-left-radius: var(--radius-lg);
+}
+
+.hud-corner-br {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2.5px solid var(--accent);
+  border-right: 2.5px solid var(--accent);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.profile-card:hover .hud-corner {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 6px var(--accent));
+}
+
+/* HUD Header Telemetry Bar */
+.hud-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 4px;
 }
 
 .badge-location {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(7, 11, 20, 0.88);
+  position: relative;
+  background: rgba(7, 11, 20, 0.85);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  padding: 5px 12px;
+  border: 1px solid var(--border-light);
+  padding: 4px 12px;
   border-radius: var(--radius-pill);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
   color: var(--text-primary);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  z-index: 2;
+  gap: 7px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .badge-dot {
@@ -891,36 +929,172 @@ textarea:focus-visible {
   background: #27c93f;
   border-radius: 50%;
   box-shadow: 0 0 8px #27c93f;
+  animation: pulseGreen 2s infinite ease-in-out;
 }
 
+@keyframes pulseGreen {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px #27c93f; }
+  50% { opacity: 0.5; transform: scale(0.85); box-shadow: 0 0 2px #27c93f; }
+}
+
+.hud-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+}
+
+.hud-code-prefix {
+  opacity: 0.65;
+  margin-right: 3px;
+  font-weight: 500;
+}
+
+/* Image Wrap Container */
+.profile-img-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--panel-solid);
+  border: 1px solid rgba(var(--accent-rgb), 0.25);
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6), 0 8px 24px -6px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-smooth);
+}
+
+.profile-card:hover .profile-img-wrap {
+  border-color: rgba(var(--accent-rgb), 0.6);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.7), 0 10px 30px -4px var(--accent-glow);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.profile-card:hover .profile-img {
+  transform: scale(1.05);
+}
+
+/* Inner Vignette / Shadow Overlay */
+.hud-img-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.05) 0%, rgba(7, 11, 20, 0.1) 65%, rgba(7, 11, 20, 0.65) 100%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity var(--transition-smooth);
+}
+
+/* HUD Role Pill inside image */
+.hud-role-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(7, 11, 20, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+
+.hud-role-pill::before {
+  content: '⚡';
+  font-size: 0.75rem;
+}
+
+/* Animated Scanner Sweep */
+.hud-scanner-line {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(180deg, transparent 0%, rgba(var(--accent-rgb), 0.18) 50%, rgba(var(--accent-rgb), 0.35) 98%, var(--accent) 100%);
+  box-shadow: 0 2px 10px var(--accent);
+  opacity: 0;
+  z-index: 4;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.profile-card:hover .hud-scanner-line {
+  opacity: 0.85;
+  animation: hudScan 2.4s infinite ease-in-out;
+}
+
+@keyframes hudScan {
+  0% { top: -40%; }
+  50% { top: 110%; }
+  100% { top: -40%; }
+}
+
+/* Enhanced HUD Stats Pods */
 .profile-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 10px;
   margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
+  padding-top: 0;
+  border-top: none;
   text-align: center;
 }
 
-.stat-item {
+.hud-stat-pod {
+  background: rgba(14, 22, 38, 0.65);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 6px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-smooth);
+}
+
+.hud-stat-pod:hover {
+  background: var(--panel-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 12px var(--accent-glow);
 }
 
 .stat-val {
   font-family: var(--font-mono);
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--accent);
+  line-height: 1.2;
 }
 
 .stat-lbl {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 2px;
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+  font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
