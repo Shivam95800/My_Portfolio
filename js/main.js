@@ -830,6 +830,8 @@ function initCommandPalette() {
     { title: 'Go to Experience & Internships', category: 'Navigation', icon: '💼', action: () => scrollToSection('experience') },
     { title: 'Go to Featured Projects', category: 'Navigation', icon: '🚀', action: () => scrollToSection('projects') },
         // Verified Certificates
+    { title: 'View WAFI Media Internship Completion Certificate (PDF)', category: 'Certificates', icon: '💼', action: () => window.open('assets/certificates/wafi-media-internship-certificate.pdf', '_blank') },
+    { title: 'View Wipro TalentNext Data Science with Python Certificate (PDF)', category: 'Certificates', icon: '🐍', action: () => window.open('assets/certificates/wipro-talentnext-data-science-python.pdf', '_blank') },
     { title: 'View NPTEL Machine Learning Certificate - IIT Madras (PDF)', category: 'Certificates', icon: '🎓', action: () => window.open('assets/certificates/nptel-iit-madras-machine-learning.pdf', '_blank') },
     { title: 'View Oracle Cloud AI Certified Associate (PDF)', category: 'Certificates', icon: '🏆', action: () => window.open('assets/certificates/oracle-cloud-ai-foundations.pdf', '_blank') },
     { title: 'View Infosys Java Fundamentals Certificate (PDF)', category: 'Certificates', icon: '☕', action: () => window.open('assets/certificates/infosys-java-programming-fundamentals.pdf', '_blank') },
@@ -840,6 +842,14 @@ function initCommandPalette() {
     { title: 'Go to Contact', category: 'Navigation', icon: '📬', action: () => scrollToSection('contact') },
 
         // Featured Projects
+    { title: 'Kestrel Warranty Claim Detection (Live Render)', category: 'Projects', icon: '🛡️', action: () => window.open('https://kestrel-warranty-detection.onrender.com', '_blank') },
+    { title: 'Kestrel Warranty Detection GitHub Repo', category: 'GitHub', icon: '🐙', action: () => window.open('https://github.com/Shivam95800/Detection', '_blank') },
+    { title: 'AI ATS Resume Scorer (Live Vercel)', category: 'Projects', icon: '🎯', action: () => window.open('https://ats-resume-checker-nine-lake.vercel.app', '_blank') },
+    { title: 'AI ATS Resume Scorer GitHub Repo', category: 'GitHub', icon: '🐙', action: () => window.open('https://github.com/Shivam95800/ATS_RESUME_CHECKER', '_blank') },
+    { title: 'JobTrack Application Tracker (Live Vercel)', category: 'Projects', icon: '📋', action: () => window.open('https://job-track-job-application-tracker.vercel.app', '_blank') },
+    { title: 'SocialPulse Mini Social App (Live Vercel)', category: 'Projects', icon: '💬', action: () => window.open('https://mini-social-post-app-pi.vercel.app', '_blank') },
+    { title: 'CareOS Healthcare Records (GitHub)', category: 'GitHub', icon: '🏥', action: () => window.open('https://github.com/Shivam95800/Healthcare', '_blank') },
+    { title: 'Healthcare Backend REST API (GitHub)', category: 'GitHub', icon: '⚙️', action: () => window.open('https://github.com/Shivam95800/healthcare-backend', '_blank') },
     { title: 'SnapClass AI Attendance (Live Streamlit)', category: 'Projects', icon: '📸', action: () => window.open('https://snapclass-attendance-gcet.streamlit.app/', '_blank') },
     { title: 'SnapClass GitHub Repository', category: 'GitHub', icon: '🐙', action: () => window.open('https://github.com/Shivam95800/SnapClass-Attendance', '_blank') },
     { title: 'Homely Hub Booking Platform (Live Vercel)', category: 'Projects', icon: '🏡', action: () => window.open('https://homely-hub-omega.vercel.app/', '_blank') },
@@ -1150,13 +1160,15 @@ function initShivamAIAssistant() {
       return `<strong>Shivam Soni</strong> is a final-year <strong>B.Tech CSE (Data Science)</strong> student at <strong>Galgotias College of Engineering and Technology</strong> (Graduating 2027). He specializes in Python, Machine Learning, SQL, and Full-Stack Development, with 110+ LeetCode problems solved!`;
     }
 
-    if (q.includes('project') || q.includes('work') || q.includes('portfolio') || q.includes('snapclass') || q.includes('homely')) {
-      return `Here are Shivam's flagship deployed projects:<br><br>
-      • 📸 <strong>SnapClass AI Attendance:</strong> Face & voice verification system built with Python & Streamlit.<br>
-      • 🏡 <strong>Homely Hub:</strong> Full-stack accommodation booking app (React, Express, MongoDB).<br>
-      • 📝 <strong>AI Text Summarization:</strong> NLP article distillation tool deployed on Render.<br>
-      • 🤖 <strong>AI Personal Assistant:</strong> Intelligent desktop/web assistant.<br><br>
-      <a href="#projects" onclick="document.getElementById('ai-chat-close-btn').click();" style="color:var(--accent); text-decoration:underline;">Click here to view all projects →</a>`;
+    if (q.includes('project') || q.includes('work') || q.includes('portfolio') || q.includes('snapclass') || q.includes('homely') || q.includes('ats') || q.includes('kestrel') || q.includes('jobtrack') || q.includes('healthcare') || q.includes('social')) {
+      return `Here are Shivam's flagship deployed projects (20 repositories showcased):<br><br>
+      • 🛡️ <strong>Kestrel Warranty Detection:</strong> ML warranty claim review system (FastAPI, Scikit-Learn, Docker).<br>
+      • 🎯 <strong>AI ATS Resume Scorer:</strong> Semantic ATS analyzer & PDF report generator (FastAPI, Next.js, NLP).<br>
+      • 📋 <strong>JobTrack Tracker:</strong> Modern job pipeline tracker (React 19, Vite, Tailwind CSS).<br>
+      • 🏥 <strong>CareOS Healthcare & Backend API:</strong> Django 5 + DRF + PostgreSQL + SimpleJWT systems.<br>
+      • 📸 <strong>SnapClass AI Attendance:</strong> Face & voice verification system (Python, OpenCV, Streamlit).<br>
+      • 🏡 <strong>Homely Hub & SocialPulse:</strong> Full-stack MERN apps deployed on Vercel.<br><br>
+      <a href="#projects" onclick="document.getElementById('ai-chat-close-btn').click();" style="color:var(--accent); text-decoration:underline;">Click here to view all 20 projects →</a>`;
     }
 
     if (q.includes('skill') || q.includes('tech') || q.includes('language') || q.includes('stack')) {
@@ -1185,6 +1197,25 @@ function initShivamAIAssistant() {
       • <strong>Email:</strong> <a href="mailto:shivam301102@gmail.com" style="color:var(--accent);">shivam301102@gmail.com</a><br>
       • <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shivamsonitech" target="_blank" style="color:var(--accent);">linkedin.com/in/shivamsonitech</a><br>
       • <strong>GitHub:</strong> <a href="https://github.com/Shivam95800" target="_blank" style="color:var(--accent);">github.com/Shivam95800</a>`;
+    }
+
+    if (q.includes('experience') || q.includes('intern') || q.includes('wafi') || q.includes('codsoft')) {
+      return `💼 <strong>Internship & Work Experience:</strong><br><br>
+      • 🌐 <strong>Web Development Intern — WAFI Media Marketing Solutions Pvt. Ltd.</strong> (Jul – Sept 2026, 2 Months)<br>
+      • 💻 <strong>Web Development Intern — CodSoft</strong> (Sept 2025, 4 Weeks, 3 deployed projects)<br><br>
+      <a href="#experience" onclick="document.getElementById('ai-chat-close-btn').click();" style="color:var(--accent); text-decoration:underline;">Jump to Work Experience →</a>`;
+    }
+
+    if (q.includes('certif') || q.includes('award') || q.includes('wipro') || q.includes('talentnext') || q.includes('oracle') || q.includes('nptel') || q.includes('infosys')) {
+      return `🏆 <strong>Verified Certifications & Credentials:</strong><br><br>
+      • 💼 <strong>Web Development Internship:</strong> WAFI Media Marketing Solutions Pvt. Ltd. (Jul–Sept 2026)<br>
+      • 🐍 <strong>Data Science with Python (TalentNext):</strong> Wipro Limited (Jul–Oct 2026)<br>
+      • 🤖 <strong>OCI 2025 Certified AI Foundations Associate:</strong> Oracle University<br>
+      • 🎓 <strong>Introduction to Machine Learning:</strong> NPTEL (IIT Madras)<br>
+      • ☕ <strong>Java Programming Fundamentals:</strong> Infosys Springboard<br>
+      • 🌐 <strong>HTML - Advanced:</strong> Infosys Springboard<br>
+      • 📄 <strong>Web Development Virtual Internship Offer:</strong> CodSoft<br><br>
+      <a href="#awards" onclick="document.getElementById('ai-chat-close-btn').click();" style="color:var(--accent); text-decoration:underline;">View & open certificate PDFs →</a>`;
     }
 
     if (q.includes('leetcode') || q.includes('dsa') || q.includes('algorithm')) {
@@ -1259,8 +1290,8 @@ function initAIGuidedTour() {
     },
     {
       target: '#projects',
-      title: '12 Deployed Projects Showcase',
-      desc: 'Filter 12 real-world systems across AI, Computer Vision, Full-Stack Web, and Java DSA with live deployment links and GitHub code.',
+      title: '20 Deployed Projects Showcase',
+      desc: 'Filter 20 real-world systems across AI, Computer Vision, Full-Stack Web, Django APIs, and Java DSA with live deployment links and GitHub code.',
       action: () => {
         document.querySelector('[data-filter="ai"]')?.click();
       }

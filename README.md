@@ -18,8 +18,10 @@ A modern, high-performance, ultra-interactive developer portfolio website built 
 - 🖥️ **Interactive Terminal Hero:** Live Python REPL terminal supporting commands (`ds.predict()`, `ds.skills()`, `ds.stats()`).
 - 🤖 **"Ask Shivam AI" Assistant:** Floating AI chatbot ready 24/7 to answer recruiter queries regarding background, education, CGPA, projects, and contact info.
 - ⚡ **Spotlight Command Palette (`Ctrl + K`):** Fast, keyboard-first navigation inspired by Raycast and VS Code.
-- 🚀 **12 Deployed Projects Showcase:** Filterable by category (*AI & Vision, Full-Stack & Web, NLP & Chatbots, DSA & Java*) with live demos and GitHub source code.
+- 🚀 **20 Deployed Projects Showcase:** Filterable by category (*AI & Vision, Full-Stack & Web, NLP & Chatbots, DSA & Java*) with live demos and GitHub source code.
 - 🏆 **Verified Certifications Suite:** View official certificate PDFs directly on the website:
+  - **Web Development Internship Completion Certificate** (WAFI Media Marketing Solutions Pvt. Ltd.)
+  - **Data Science with Python (TalentNext)** (Wipro Limited)
   - **OCI 2025 Certified AI Foundations Associate** (Oracle University)
   - **Introduction to Machine Learning** (NPTEL - IIT Madras)
   - **Java Programming Fundamentals** (Infosys Springboard)
@@ -46,6 +48,8 @@ Portfolio/
 │   ├── portfolio_ai_demo.gif  # AI animated video showcase
 │   ├── portfolio_ai_demo.webp # High-resolution WebP animation
 │   └── certificates/       # Official verified PDF credentials
+│       ├── wafi-media-internship-certificate.pdf
+│       ├── wipro-talentnext-data-science-python.pdf
 │       ├── oracle-cloud-ai-foundations.pdf
 │       ├── nptel-iit-madras-machine-learning.pdf
 │       ├── infosys-java-programming-fundamentals.pdf
